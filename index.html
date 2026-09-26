@@ -1,19 +1,16 @@
+```html
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Feliz cumple ❤️</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -21,34 +18,12 @@
       font-family: "Trebuchet MS", "Segoe UI", sans-serif;
       color: #4d3c42;
       overflow-x: hidden;
-
       background:
-        radial-gradient(
-          circle at 8% 5%,
-          rgba(244, 190, 205, 0.48),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 92% 10%,
-          rgba(145, 195, 225, 0.38),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 88% 88%,
-          rgba(171, 207, 229, 0.34),
-          transparent 34%
-        ),
-        radial-gradient(
-          circle at 12% 82%,
-          rgba(220, 192, 228, 0.30),
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #fff8fb,
-          #f5f5fb 48%,
-          #edf5fa
-        );
+        radial-gradient(circle at 8% 5%, rgba(244,190,205,.48), transparent 30%),
+        radial-gradient(circle at 92% 10%, rgba(145,195,225,.38), transparent 32%),
+        radial-gradient(circle at 88% 88%, rgba(171,207,229,.34), transparent 34%),
+        radial-gradient(circle at 12% 82%, rgba(220,192,228,.30), transparent 32%),
+        linear-gradient(135deg, #fff8fb, #f5f5fb 48%, #edf5fa);
     }
 
     main {
@@ -65,8 +40,7 @@
       position: relative;
     }
 
-    h1,
-    h2 {
+    h1, h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 600;
       color: #4d3f49;
@@ -84,11 +58,6 @@
       max-width: 680px;
     }
 
-
-    /* =========================
-       CORAZONES DEL FONDO
-       ========================= */
-
     .background-hearts {
       position: fixed;
       inset: 0;
@@ -100,77 +69,22 @@
     .background-heart {
       position: absolute;
       font-family: Georgia, serif;
-      opacity: 0.16;
+      opacity: .16;
       animation: floatHeart 8s ease-in-out infinite;
       user-select: none;
     }
 
-    .heart-1 {
-      left: 6%;
-      top: 16%;
-      font-size: 30px;
-      color: #d47f9b;
-      animation-delay: -2s;
-    }
-
-    .heart-2 {
-      left: 87%;
-      top: 11%;
-      font-size: 42px;
-      color: #4f88ad;
-      opacity: 0.15;
-      animation-delay: -6s;
-    }
-
-    .heart-3 {
-      left: 10%;
-      top: 52%;
-      font-size: 25px;
-      color: #4f88ad;
-      opacity: 0.14;
-      animation-delay: -4s;
-    }
-
-    .heart-4 {
-      left: 91%;
-      top: 47%;
-      font-size: 33px;
-      color: #d47f9b;
-      animation-delay: -7s;
-    }
-
-    .heart-5 {
-      left: 5%;
-      top: 81%;
-      font-size: 39px;
-      color: #4f88ad;
-      opacity: 0.15;
-      animation-delay: -1s;
-    }
-
-    .heart-6 {
-      left: 84%;
-      top: 82%;
-      font-size: 28px;
-      color: #d47f9b;
-      animation-delay: -5s;
-    }
+    .heart-1 { left: 6%; top: 16%; font-size: 30px; color: #d47f9b; animation-delay: -2s; }
+    .heart-2 { left: 87%; top: 11%; font-size: 42px; color: #4f88ad; opacity: .15; animation-delay: -6s; }
+    .heart-3 { left: 10%; top: 52%; font-size: 25px; color: #4f88ad; opacity: .14; animation-delay: -4s; }
+    .heart-4 { left: 91%; top: 47%; font-size: 33px; color: #d47f9b; animation-delay: -7s; }
+    .heart-5 { left: 5%; top: 81%; font-size: 39px; color: #4f88ad; opacity: .15; animation-delay: -1s; }
+    .heart-6 { left: 84%; top: 82%; font-size: 28px; color: #d47f9b; animation-delay: -5s; }
 
     @keyframes floatHeart {
-      0%,
-      100% {
-        transform: translateY(0) rotate(-5deg);
-      }
-
-      50% {
-        transform: translateY(-12px) rotate(5deg);
-      }
+      0%,100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
     }
-
-
-    /* =========================
-       PORTADA
-       ========================= */
 
     .hero {
       padding-top: 8px;
@@ -190,16 +104,15 @@
       margin: 0;
       color: #46789b;
       font-size: clamp(3.7rem, 12vw, 7rem);
-      line-height: 0.98;
+      line-height: .98;
       letter-spacing: -2.5px;
-      text-shadow:
-        0 5px 18px rgba(61, 113, 148, 0.20);
+      text-shadow: 0 5px 18px rgba(61,113,148,.20);
     }
 
     .title-decoration {
       position: absolute;
       font-family: Georgia, serif;
-      opacity: 0.85;
+      opacity: .85;
     }
 
     .title-decoration.left {
@@ -222,7 +135,7 @@
       left: 12px;
       bottom: -18px;
       color: #739fba;
-      font-size: 0.95rem;
+      font-size: .95rem;
       transform: rotate(15deg);
     }
 
@@ -236,31 +149,42 @@
 
     .main-photo {
       display: block;
-      width: min(470px, 88%);
-      max-height: 560px;
-      object-fit: cover;
-      margin: 0 auto 22px;
-      border-radius: 20px;
+      width: min(410px, 88%);
+      height: auto;
+      margin: 0 auto 30px;
+      padding: 13px 13px 17px;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid rgba(80,80,80,.08);
       box-shadow:
-        0 12px 35px rgba(72, 49, 61, 0.14),
-        0 0 0 4px rgba(112, 169, 199, 0.12);
+        0 18px 35px rgba(72,49,61,.16),
+        0 4px 10px rgba(72,49,61,.08);
+      transform: rotate(1.5deg);
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .main-photo:hover {
+      transform: rotate(0deg) translateY(-3px);
+      box-shadow:
+        0 22px 40px rgba(72,49,61,.18),
+        0 5px 12px rgba(72,49,61,.09);
     }
 
     .confetti-btn {
       position: relative;
       width: 54px;
       height: 54px;
-      border: 2px solid rgba(90, 150, 190, 0.35);
+      border: 2px solid rgba(90,150,190,.35);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255,255,255,.95);
       box-shadow:
-        0 7px 22px rgba(72, 49, 61, 0.14),
-        0 0 18px rgba(90, 160, 200, 0.14);
+        0 7px 22px rgba(72,49,61,.14),
+        0 0 18px rgba(90,160,200,.14);
       font-size: 1.45rem;
       cursor: pointer;
-      transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
+      transition: transform .18s ease, box-shadow .18s ease;
       animation: confettiPulse 2.2s ease-in-out infinite;
     }
 
@@ -268,36 +192,34 @@
       content: "";
       position: absolute;
       inset: -5px;
-      border: 1px solid rgba(90, 160, 200, 0.18);
+      border: 1px solid rgba(90,160,200,.18);
       border-radius: 50%;
       pointer-events: none;
     }
 
     .confetti-btn:hover {
       transform: translateY(-2px) scale(1.06);
-
       box-shadow:
-        0 8px 24px rgba(72, 49, 61, 0.17),
-        0 0 25px rgba(90, 160, 200, 0.28);
+        0 8px 24px rgba(72,49,61,.17),
+        0 0 25px rgba(90,160,200,.28);
     }
 
     .confetti-btn:active {
-      transform: scale(0.94);
+      transform: scale(.94);
       animation: none;
     }
 
     @keyframes confettiPulse {
-      0%,
-      100% {
+      0%,100% {
         box-shadow:
-          0 7px 22px rgba(72, 49, 61, 0.14),
-          0 0 18px rgba(90, 160, 200, 0.14);
+          0 7px 22px rgba(72,49,61,.14),
+          0 0 18px rgba(90,160,200,.14);
       }
 
       50% {
         box-shadow:
-          0 8px 24px rgba(72, 49, 61, 0.16),
-          0 0 25px rgba(90, 160, 200, 0.25);
+          0 8px 24px rgba(72,49,61,.16),
+          0 0 25px rgba(90,160,200,.25);
       }
     }
 
@@ -307,19 +229,16 @@
       margin: 23px auto 0;
       padding: 13px 30px;
       border-radius: 50px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.88),
-          rgba(221, 239, 249, 0.92)
-        );
-
-      border: 1px solid rgba(75, 135, 174, 0.28);
-
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.88),
+        rgba(221,239,249,.92)
+      );
+      border: 1px solid rgba(75,135,174,.28);
       box-shadow:
-        0 8px 25px rgba(72, 49, 61, 0.08),
-        0 0 20px rgba(90, 160, 200, 0.10);
+        0 8px 25px rgba(72,49,61,.08),
+        0 0 20px rgba(90,160,200,.10);
+      animation: loveCardPulse 3.5s ease-in-out infinite;
     }
 
     .love-text {
@@ -327,12 +246,37 @@
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.3rem;
       color: #4c7188;
+      text-shadow: 0 2px 10px rgba(76,113,136,.12);
     }
 
+    .love-heart {
+      display: inline-block;
+      color: #d47f9b;
+      font-size: 1rem;
+      margin: 0 5px;
+      animation: tinyHeart 2.8s ease-in-out infinite;
+    }
 
-    /* =========================
-       SEPARADORES
-       ========================= */
+    .love-heart.right {
+      animation-delay: .4s;
+    }
+
+    @keyframes loveCardPulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.018); }
+    }
+
+    @keyframes tinyHeart {
+      0%,100% {
+        transform: translateY(0) scale(1);
+        opacity: .8;
+      }
+
+      50% {
+        transform: translateY(-2px) scale(1.12);
+        opacity: 1;
+      }
+    }
 
     .section-divider {
       margin: -30px auto 55px;
@@ -340,102 +284,66 @@
       font-family: Georgia, serif;
       font-size: 1.15rem;
       letter-spacing: 5px;
-      opacity: 0.82;
+      opacity: .82;
     }
 
-
-    /* =========================
-       CONTADOR
-       ========================= */
-
     .counter-box {
-      width: min(760px, 100%);
+      width: min(760px,100%);
       margin: 0 auto;
       padding: 25px 18px;
       border-radius: 22px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.76),
-          rgba(228, 241, 249, 0.80)
-        );
-
-      border: 1px solid rgba(70, 130, 170, 0.25);
-
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.76),
+        rgba(228,241,249,.80)
+      );
+      border: 1px solid rgba(70,130,170,.25);
       box-shadow:
-        0 10px 30px rgba(72, 49, 61, 0.08),
-        0 0 25px rgba(90, 160, 200, 0.08);
-
+        0 10px 30px rgba(72,49,61,.08),
+        0 0 25px rgba(90,160,200,.08);
       display: grid;
-      grid-template-columns:
-        repeat(5, 1fr);
+      grid-template-columns: repeat(5,1fr);
       gap: 10px;
     }
 
     .counter-number {
       display: block;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 4vw, 2rem);
+      font-size: clamp(1.45rem,4vw,2rem);
       color: #427797;
     }
 
     .counter-label {
       display: block;
       margin-top: 5px;
-      font-size: 0.78rem;
+      font-size: .78rem;
       text-transform: uppercase;
-      letter-spacing: 0.7px;
+      letter-spacing: .7px;
       color: #53616a;
-      opacity: 0.78;
+      opacity: .78;
     }
-
-
-    /* =========================
-       GALERÍA
-       ========================= */
 
     .gallery {
       display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      width: min(760px, 100%);
+      grid-template-columns: repeat(2,1fr);
+      gap: 25px;
+      width: min(760px,100%);
       margin: 0 auto;
-      align-items: start;
     }
 
     .photo-card {
       perspective: 1000px;
       cursor: pointer;
       width: 100%;
+      height: 330px;
     }
 
     .photo-inner {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 100%;
+      transition: transform .75s;
       transform-style: preserve-3d;
-      transition:
-        transform 0.6s ease;
-    }
-
-    /*
-      Las verticales mantienen una proporción
-      natural y consistente en todos los dispositivos.
-    */
-
-    .photo-card.vertical .photo-inner {
-      aspect-ratio: 4 / 5;
-    }
-
-    /*
-      Las horizontales conservan una proporción
-      más ancha para evitar que se vean cuadradas.
-    */
-
-    .photo-card.horizontal .photo-inner {
-      aspect-ratio: 16 / 9;
     }
 
     .photo-card.flipped .photo-inner {
@@ -447,16 +355,10 @@
       position: absolute;
       inset: 0;
       overflow: hidden;
-      border-radius: 18px;
+      border-radius: 24px;
       backface-visibility: hidden;
-
-      box-shadow:
-        0 9px 25px rgba(72, 49, 61, 0.13),
-        0 0 0 2px rgba(87, 145, 177, 0.10);
-    }
-
-    .photo-front {
-      background: #e7eef2;
+      box-shadow: 0 12px 32px rgba(100,80,110,.17);
+      background: #fff;
     }
 
     .photo-front img {
@@ -466,22 +368,18 @@
       display: block;
     }
 
+    .photo-card.photo4 .photo-front img {
+      object-position: center 25%;
+    }
+
     .photo-back {
       transform: rotateY(180deg);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 28px;
+      padding: 30px;
       text-align: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.96),
-          rgba(215, 235, 247, 0.98)
-        );
-
-      border: 1px solid rgba(65, 130, 170, 0.25);
+      background: linear-gradient(135deg,#fff,#fff0f5);
     }
 
     .photo-back p {
@@ -490,29 +388,74 @@
       color: #4c7188;
     }
 
+    .plans-box {
+      width: min(680px,100%);
+      margin: 0 auto;
+      padding: 27px 30px 29px;
+      border-radius: 24px;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.76),
+        rgba(228,241,249,.82)
+      );
+      border: 1px solid rgba(70,130,170,.20);
+      box-shadow:
+        0 10px 30px rgba(72,49,61,.08),
+        0 0 25px rgba(90,160,200,.06);
+    }
 
-    /* =========================
-       HISTORIA / FOTOCHAT
-       ========================= */
+    .plans-title {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem,4vw,1.85rem);
+      font-weight: 600;
+      color: #4d6f84;
+    }
+
+    .plans-items {
+      width: min(600px,100%);
+      margin: 0 auto;
+      padding: 2px 4px;
+      text-align: left;
+    }
+
+    .plan-item {
+      position: relative;
+      padding: 11px 12px 11px 35px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.06rem;
+      line-height: 1.45;
+      color: #4c7188;
+      border-radius: 13px;
+    }
+
+    .plan-item::before {
+      content: "✦";
+      position: absolute;
+      left: 7px;
+      top: 11px;
+      color: #6d9ab3;
+      font-size: .78rem;
+    }
+
+    .plan-item + .plan-item {
+      margin-top: 2px;
+    }
 
     .origin-card {
-      width: min(720px, 100%);
+      width: min(720px,100%);
       margin: 0 auto;
       padding: 34px 28px;
       border-radius: 24px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.82),
-          rgba(222, 239, 248, 0.84)
-        );
-
-      border: 1px solid rgba(70, 130, 170, 0.22);
-
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.82),
+        rgba(222,239,248,.84)
+      );
+      border: 1px solid rgba(70,130,170,.22);
       box-shadow:
-        0 10px 30px rgba(72, 49, 61, 0.08),
-        0 0 25px rgba(90, 160, 200, 0.07);
+        0 10px 30px rgba(72,49,61,.08),
+        0 0 25px rgba(90,160,200,.07);
     }
 
     .origin-card h2 {
@@ -532,19 +475,10 @@
       margin: 0 auto;
       padding: 19px 22px;
       border-radius: 17px;
-
-      background: rgba(255, 255, 255, 0.72);
-
-      border: 1px solid rgba(70, 130, 170, 0.15);
-
-      box-shadow:
-        0 5px 18px rgba(72, 49, 61, 0.05);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(70,130,170,.15);
+      box-shadow: 0 5px 18px rgba(72,49,61,.05);
     }
-
-
-    /* =========================
-       FINAL
-       ========================= */
 
     .final-section {
       margin-top: 10px;
@@ -552,99 +486,222 @@
     }
 
     .final-card {
-      width: min(720px, 100%);
-      margin: 0 auto 30px;
-      padding: 32px 28px;
-      border-radius: 25px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.86),
-          rgba(218, 237, 248, 0.92)
-        );
-
-      border: 1px solid rgba(67, 131, 171, 0.25);
-
+      width: min(380px,88%);
+      margin: 0 auto 25px;
+      padding: 13px 13px 17px;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid rgba(80,80,80,.08);
       box-shadow:
-        0 10px 30px rgba(72, 49, 61, 0.09),
-        0 0 28px rgba(90, 160, 200, 0.10);
+        0 18px 35px rgba(72,49,61,.16),
+        0 4px 10px rgba(72,49,61,.08);
+      transform: rotate(-1.5deg);
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
     }
 
-    .final-card::before {
-      content: "♡  ✦  ♡";
-      display: block;
-      margin-bottom: 10px;
-      color: #5689a7;
-      font-family: Georgia, serif;
-      font-size: 1.25rem;
-      letter-spacing: 5px;
-      opacity: 0.85;
-    }
-
-    .final-text {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 4vw, 1.85rem);
-      font-weight: 600;
-      line-height: 1.45;
-      margin: 0 auto;
-      color: #4b6f84;
-      max-width: 580px;
+    .final-card:hover {
+      transform: rotate(0deg) translateY(-3px);
+      box-shadow:
+        0 22px 40px rgba(72,49,61,.18),
+        0 5px 12px rgba(72,49,61,.09);
     }
 
     .final-photo {
       display: block;
-      width: min(420px, 88%);
-      max-height: 520px;
-      object-fit: cover;
-      margin: 0 auto;
-      border-radius: 20px;
-
-      box-shadow:
-        0 12px 35px rgba(72, 49, 61, 0.13),
-        0 0 0 4px rgba(91, 151, 184, 0.12);
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border-radius: 2px;
     }
 
+    .final-decoration {
+      padding: 15px 0 0;
+      color: #5689a7;
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      letter-spacing: 5px;
+      opacity: .78;
+      text-align: center;
+    }
 
-    /* =========================
-       CONFETI
-       ========================= */
+    .final-button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 145px;
+      padding: 15px 32px;
+      margin: 0 auto 14px;
+      border: 1px solid rgba(75,135,174,.30);
+      border-radius: 50px;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.97),
+        rgba(221,239,249,.97)
+      );
+      color: #4c7188;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      box-shadow:
+        0 8px 24px rgba(72,49,61,.11),
+        0 0 20px rgba(90,160,200,.11);
+      cursor: pointer;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .final-button:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow:
+        0 11px 28px rgba(72,49,61,.15),
+        0 0 27px rgba(90,160,200,.22);
+    }
+
+    .final-button:active {
+      transform: scale(.96);
+    }
+
+    .final-button-heart {
+      color: #d47f9b;
+      font-size: 1rem;
+    }
+
+    .final-message {
+      width: min(720px,100%);
+      margin: 0 auto;
+      padding: 32px 28px;
+      border-radius: 25px;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.90),
+        rgba(218,237,248,.94)
+      );
+      border: 1px solid rgba(67,131,171,.25);
+      box-shadow:
+        0 10px 30px rgba(72,49,61,.09),
+        0 0 28px rgba(90,160,200,.10);
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      max-height: 0;
+      overflow: hidden;
+      transition:
+        opacity .8s ease,
+        transform .8s ease,
+        max-height .8s ease,
+        padding .8s ease;
+      cursor: pointer;
+    }
+
+    .final-message.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      max-height: 500px;
+    }
+
+    .final-message::before {
+      content: "♡  ✦  ♡";
+      display: block;
+      margin-bottom: 14px;
+      color: #5689a7;
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      letter-spacing: 5px;
+      opacity: .85;
+    }
+
+    .final-thanks {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem,4vw,1.75rem);
+      font-weight: 600;
+      line-height: 1.45;
+      margin: 0 auto 18px;
+      color: #4b6f84;
+      max-width: 580px;
+    }
+
+    .final-day {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.15rem,3.5vw,1.35rem);
+      font-style: italic;
+      line-height: 1.5;
+      margin: 0 auto 14px;
+      color: #62839a;
+      max-width: 540px;
+      text-shadow: 0 2px 8px rgba(76,113,136,.08);
+    }
+
+    .final-love {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem,4vw,1.85rem);
+      font-weight: 600;
+      margin: 0;
+      color: #d07896;
+      text-shadow: 0 3px 12px rgba(208,120,150,.16);
+    }
+
+    .final-spark {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      font-size: 18px;
+      animation: finalSpark 1.7s ease-out forwards;
+    }
+
+    @keyframes finalSpark {
+      0% {
+        transform: translate(-50%,-50%) scale(.5) rotate(0);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translate(
+            calc(-50% + var(--x)),
+            calc(-50% + var(--y))
+          )
+          scale(1)
+          rotate(180deg);
+        opacity: 0;
+      }
+    }
 
     .confetti-piece {
       position: fixed;
       top: -30px;
       z-index: 9999;
       pointer-events: none;
-      animation:
-        fall 1.8s ease-out forwards;
+      animation: fall 1.8s ease-out forwards;
       font-size: 20px;
     }
 
     @keyframes fall {
       0% {
-        transform:
-          translateY(0)
-          rotate(0deg);
+        transform: translateY(0) rotate(0);
         opacity: 1;
       }
 
       100% {
-        transform:
-          translateY(105vh)
-          rotate(540deg);
+        transform: translateY(105vh) rotate(540deg);
         opacity: 0;
       }
     }
 
-
-    /* =========================
-       CELULAR
-       ========================= */
-
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
 
       main {
-        width: min(92%, 500px);
+        width: min(92%,500px);
         padding-top: 42px;
       }
 
@@ -658,7 +715,7 @@
       }
 
       h1 {
-        font-size: clamp(3.1rem, 16vw, 4.8rem);
+        font-size: clamp(3.1rem,16vw,4.8rem);
         letter-spacing: -1.5px;
       }
 
@@ -677,36 +734,48 @@
       .title-decoration.extra-left {
         left: 6px;
         bottom: -15px;
-        font-size: 0.75rem;
+        font-size: .75rem;
       }
 
       .title-decoration.extra-right {
         right: 5px;
         top: -15px;
-        font-size: 0.75rem;
+        font-size: .75rem;
+      }
+
+      .main-photo {
+        width: min(88%,410px);
+        padding: 10px 10px 14px;
+        margin-bottom: 27px;
       }
 
       .love-card {
         padding: 11px 22px;
       }
 
+      .love-text {
+        font-size: 1.2rem;
+      }
+
       .counter-box {
-        grid-template-columns:
-          repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(5,minmax(0,1fr));
         gap: 3px;
         padding: 20px 8px;
       }
 
       .counter-label {
-        font-size: 0.62rem;
-        letter-spacing: 0.2px;
+        font-size: .62rem;
+        letter-spacing: .2px;
       }
 
       .gallery {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,1fr);
         gap: 14px;
         width: 100%;
+      }
+
+      .photo-card {
+        height: 390px;
       }
 
       .photo-back {
@@ -714,7 +783,31 @@
       }
 
       .photo-back p {
-        font-size: 0.98rem;
+        font-size: .98rem;
+      }
+
+      .plans-box {
+        padding: 23px 17px 25px;
+      }
+
+      .plans-title {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+      }
+
+      .plans-items {
+        padding: 2px 1px;
+      }
+
+      .plan-item {
+        font-size: 1rem;
+        padding: 11px 7px 11px 31px;
+      }
+
+      .plan-item::before {
+        left: 5px;
+        top: 11px;
+        font-size: .72rem;
       }
 
       .origin-card {
@@ -726,7 +819,37 @@
       }
 
       .final-card {
+        width: min(82%,380px);
+        margin-bottom: 21px;
+        padding: 10px 10px 14px;
+      }
+
+      .final-decoration {
+        padding-top: 12px;
+        font-size: .95rem;
+      }
+
+      .final-button {
+        min-width: 145px;
+        padding: 13px 29px;
+        margin-bottom: 10px;
+        font-size: 1.08rem;
+      }
+
+      .final-message {
         padding: 27px 20px;
+      }
+
+      .final-message.show {
+        padding: 27px 20px;
+      }
+
+      .final-thanks {
+        font-size: 1.35rem;
+      }
+
+      .final-day {
+        font-size: 1.12rem;
       }
 
       .section-divider {
@@ -735,18 +858,18 @@
       }
 
       .background-heart {
-        opacity: 0.13;
+        opacity: .13;
       }
     }
 
-    @media (max-width: 390px) {
+    @media (max-width:390px) {
 
       .counter-number {
         font-size: 1.2rem;
       }
 
       .counter-label {
-        font-size: 0.55rem;
+        font-size: .55rem;
       }
 
       .gallery {
@@ -754,654 +877,463 @@
       }
     }
   </style>
+
 </head>
 
 <body>
 
-
-  <!-- =========================
-       CORAZONES DEL FONDO
-       ========================= -->
-
   <div class="background-hearts" aria-hidden="true">
-
-    <span class="background-heart heart-1">
-      ♡
-    </span>
-
-    <span class="background-heart heart-2">
-      ♡
-    </span>
-
-    <span class="background-heart heart-3">
-      ♡
-    </span>
-
-    <span class="background-heart heart-4">
-      ♡
-    </span>
-
-    <span class="background-heart heart-5">
-      ♡
-    </span>
-
-    <span class="background-heart heart-6">
-      ♡
-    </span>
-
+    <span class="background-heart heart-1">♡</span>
+    <span class="background-heart heart-2">♡</span>
+    <span class="background-heart heart-3">♡</span>
+    <span class="background-heart heart-4">♡</span>
+    <span class="background-heart heart-5">♡</span>
+    <span class="background-heart heart-6">♡</span>
   </div>
-
 
   <main>
 
+<section class="hero">
 
-    <!-- =========================
-         PORTADA
-         ========================= -->
+  <div class="hero-title">
+    <span class="title-decoration left">✦</span>
+    <span class="title-decoration extra-left">♡</span>
 
-    <section class="hero">
+    <h1>Feliz cumple</h1>
 
-      <div class="hero-title">
+    <span class="title-decoration right">♡</span>
+    <span class="title-decoration extra-right">✦</span>
+  </div>
 
-        <span class="title-decoration left">
-          ✦
-        </span>
+  <img
+    class="main-photo"
+    src="foto-principal.jpeg"
+    alt=""
+  >
 
-        <span class="title-decoration extra-left">
-          ♡
-        </span>
+  <button
+    class="confetti-btn"
+    onclick="lanzarConfeti()"
+    aria-label="Celebrar"
+  >
+    🎉
+  </button>
 
-        <h1>
-          Feliz cumple
-        </h1>
+  <div class="love-card">
+    <p class="love-text">
+      <span class="love-heart">♡</span>
+      Te amo mucho.
+      <span class="love-heart right">♡</span>
+    </p>
+  </div>
 
-        <span class="title-decoration right">
-          ♡
-        </span>
+</section>
 
-        <span class="title-decoration extra-right">
-          ✦
-        </span>
+<section>
 
-      </div>
+  <h2>Tiempo Juntos</h2>
 
+  <div class="counter-box">
 
-      <img
-        class="main-photo"
-        src="foto-principal.jpeg"
-        alt=""
-      >
-
-
-      <button
-        class="confetti-btn"
-        onclick="lanzarConfeti()"
-        aria-label="Celebrar"
-      >
-        🎉
-      </button>
-
-
-      <div class="love-card">
-
-        <p class="love-text">
-          Te amo mucho.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         TIEMPO JUNTOS
-         ========================= -->
-
-    <section>
-
-      <h2>
-        Tiempo Juntos
-      </h2>
-
-
-      <div class="counter-box">
-
-        <div>
-
-          <span
-            class="counter-number"
-            id="months"
-          >
-            0
-          </span>
-
-          <span class="counter-label">
-            meses
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <span
-            class="counter-number"
-            id="days"
-          >
-            0
-          </span>
-
-          <span class="counter-label">
-            días
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <span
-            class="counter-number"
-            id="hours"
-          >
-            0
-          </span>
-
-          <span class="counter-label">
-            horas
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <span
-            class="counter-number"
-            id="minutes"
-          >
-            0
-          </span>
-
-          <span class="counter-label">
-            minutos
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <span
-            class="counter-number"
-            id="seconds"
-          >
-            0
-          </span>
-
-          <span class="counter-label">
-            segundos
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="section-divider">
-      ─── ♡ ───
+    <div>
+      <span class="counter-number" id="months">0</span>
+      <span class="counter-label">meses</span>
     </div>
 
-
-    <!-- =========================
-         GALERÍA
-         ========================= -->
-
-    <section>
-
-      <h2>
-        Algunos recuerdos ❤️
-      </h2>
-
-
-      <div class="gallery">
-
-
-        <!-- VERTICAL 1 -->
-
-        <div
-          class="photo-card vertical"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto1.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Nuestro primer besito 😘
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- VERTICAL 2 -->
-
-        <div
-          class="photo-card vertical"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto2.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Siempre el goes❤️💙
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- HORIZONTAL 1 -->
-
-        <div
-          class="photo-card horizontal"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto3.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Una muestra de lo mucho que me aguantas
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- HORIZONTAL 2 -->
-
-        <div
-          class="photo-card horizontal"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto4.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Por muchas más siestas juntitos ❤️
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- VERTICAL 3 -->
-
-        <div
-          class="photo-card vertical"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto5.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Uno de los días más felices de mi vida❤️
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- VERTICAL 4 -->
-
-        <div
-          class="photo-card vertical"
-          onclick="this.classList.toggle('flipped')"
-        >
-
-          <div class="photo-inner">
-
-            <div class="photo-front">
-
-              <img
-                src="foto6.jpeg"
-                alt=""
-              >
-
-            </div>
-
-            <div class="photo-back">
-
-              <p>
-                Quiero otro verano contigo
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="section-divider">
-      ─── ♡ ───
+    <div>
+      <span class="counter-number" id="days">0</span>
+      <span class="counter-label">días</span>
     </div>
 
-
-    <!-- =========================
-         ORIGEN
-         ========================= -->
-
-    <section>
-
-      <div class="origin-card">
-
-        <h2>
-          El día que empezamos a hablar
-        </h2>
-
-        <div class="origin-date">
-          30 de agosto de 2024
-        </div>
-
-        <div class="origin-text">
-
-          <p>
-            No sé qué sería de mí si nunca te votaba ese FotoChat.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="section-divider">
-      ─── ♡ ───
+    <div>
+      <span class="counter-number" id="hours">0</span>
+      <span class="counter-label">horas</span>
     </div>
 
+    <div>
+      <span class="counter-number" id="minutes">0</span>
+      <span class="counter-label">minutos</span>
+    </div>
 
-    <!-- =========================
-         FINAL
-         ========================= -->
+    <div>
+      <span class="counter-number" id="seconds">0</span>
+      <span class="counter-label">segundos</span>
+    </div>
 
-    <section class="final-section">
+  </div>
 
-      <div class="final-card">
+</section>
 
-        <p class="final-text">
-          Pasala muy lindo en tu día
-        </p>
+<div class="section-divider">─── ♡ ───</div>
+
+<section>
+
+  <h2>Algunos recuerdos ❤️</h2>
+
+  <div class="gallery">
+
+    <div class="photo-card" onclick="this.classList.toggle('flipped')">
+      <div class="photo-inner">
+        <div class="photo-front">
+          <img src="foto1.jpeg" alt="">
+        </div>
+
+        <div class="photo-back">
+          <p>Nuestro primer besito 😘</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-card" onclick="this.classList.toggle('flipped')">
+      <div class="photo-inner">
+        <div class="photo-front">
+          <img src="foto2.jpeg" alt="">
+        </div>
+
+        <div class="photo-back">
+          <p>Siempre el goes❤️💙</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-card" onclick="this.classList.toggle('flipped')">
+      <div class="photo-inner">
+        <div class="photo-front">
+          <img src="foto3.jpeg" alt="">
+        </div>
+
+        <div class="photo-back">
+          <p>Una muestra de lo mucho que me aguantas</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="photo-card photo4"
+      onclick="this.classList.toggle('flipped')"
+    >
+      <div class="photo-inner">
+
+        <div class="photo-front">
+          <img src="foto4.jpeg" alt="">
+        </div>
+
+        <div class="photo-back">
+          <p>Por muchas más siestas juntitos ❤️</p>
+        </div>
 
       </div>
+    </div>
 
+    <div class="photo-card" onclick="this.classList.toggle('flipped')">
+      <div class="photo-inner">
 
-      <img
-        class="final-photo"
-        src="foto-final.jpeg"
-        alt=""
-      >
+        <div class="photo-front">
+          <img src="foto5.jpeg" alt="">
+        </div>
 
-    </section>
+        <div class="photo-back">
+          <p>El día que te pedí (estaba pelado)</p>
+        </div>
 
+      </div>
+    </div>
+
+    <div class="photo-card" onclick="this.classList.toggle('flipped')">
+      <div class="photo-inner">
+
+        <div class="photo-front">
+          <img src="foto6.jpeg" alt="">
+        </div>
+
+        <div class="photo-back">
+          <p>Quiero otro verano contigo</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="section-divider">─── ♡ ───</div>
+
+<section>
+
+  <div class="plans-box">
+
+    <h2 class="plans-title">
+      Cosas que nos quedan por hacer
+    </h2>
+
+    <div class="plans-items">
+
+      <div class="plan-item">
+        Dormir juntos
+      </div>
+
+      <div class="plan-item">
+        Comer más hamburguesitas
+      </div>
+
+      <div class="plan-item">
+        Correr de todos los pichis para que no te de la locura
+      </div>
+
+      <div class="plan-item">
+        Irnos a vivir juntos a la casa de Lugano
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="section-divider">─── ♡ ───</div>
+
+<section>
+
+  <div class="origin-card">
+
+    <h2>El día que empezamos a hablar</h2>
+
+    <div class="origin-date">
+      30 de agosto de 2024
+    </div>
+
+    <div class="origin-text">
+
+      <p>
+        Me acuerdo como si fuera hoy, estaba re nervioso esperando que me
+        lleguen tus mensajes y no sabía como hablarte. Pero no se que sería
+        de mi ahora si no te hubiese votado ese foto chat, porque hasta hoy sonrío
+        cuando me llega un mensaje tuyo como si fuera ese día.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="section-divider">─── ♡ ───</div>
+
+<section class="final-section">
+
+  <div class="final-card">
+
+    <img
+      class="final-photo"
+      src="foto-final.jpeg"
+      alt=""
+    >
+
+    <div class="final-decoration">
+      ─── ✦ ───
+    </div>
+
+  </div>
+
+  <button
+    class="final-button"
+    onclick="mostrarMensajeFinal()"
+  >
+    <span class="final-button-heart">♡</span>
+    Abrir
+    <span class="final-button-heart">♡</span>
+  </button>
+
+  <div
+    class="final-message"
+    id="finalMessage"
+    onclick="cerrarMensajeFinal()"
+  >
+
+    <p class="final-thanks">
+      Gracias por hacerme la persona más feliz del mundo.
+    </p>
+
+    <p class="final-day">
+      Pasala muy lindo en tu día.
+    </p>
+
+    <p class="final-love">
+      Te amo infinitamente ❤️
+    </p>
+
+  </div>
+
+</section>
 
   </main>
 
-
   <script>
 
-
-    /* =========================
-       CONTADOR
-       ========================= */
-
-    const START =
-      new Date("2025-11-19T00:00:00-03:00");
-
+    const START = new Date("2025-11-19T00:00:00-03:00");
 
     function updateCounter() {
 
       const now = new Date();
 
-
       let months =
         (now.getFullYear() - START.getFullYear()) * 12 +
         (now.getMonth() - START.getMonth());
 
+      let anchor = new Date(START);
 
-      let anchor =
-        new Date(START);
-
-
-      anchor.setMonth(
-        anchor.getMonth() + months
-      );
-
+      anchor.setMonth(anchor.getMonth() + months);
 
       if (anchor > now) {
 
         months--;
 
-        anchor =
-          new Date(START);
-
-        anchor.setMonth(
-          anchor.getMonth() + months
-        );
-
+        anchor = new Date(START);
+        anchor.setMonth(anchor.getMonth() + months);
       }
 
+      let diff = now - anchor;
 
-      let diff =
-        now - anchor;
-
-
-      const days =
-        Math.floor(
-          diff / 86400000
-        );
-
-
+      const days = Math.floor(diff / 86400000);
       diff %= 86400000;
 
-
-      const hours =
-        Math.floor(
-          diff / 3600000
-        );
-
-
+      const hours = Math.floor(diff / 3600000);
       diff %= 3600000;
 
-
-      const minutes =
-        Math.floor(
-          diff / 60000
-        );
-
-
+      const minutes = Math.floor(diff / 60000);
       diff %= 60000;
 
+      const seconds = Math.floor(diff / 1000);
 
-      const seconds =
-        Math.floor(
-          diff / 1000
-        );
-
-
-      document.getElementById("months")
-        .textContent = months;
-
-
-      document.getElementById("days")
-        .textContent = days;
-
-
-      document.getElementById("hours")
-        .textContent = hours;
-
-
-      document.getElementById("minutes")
-        .textContent = minutes;
-
-
-      document.getElementById("seconds")
-        .textContent = seconds;
-
+      document.getElementById("months").textContent = months;
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
     }
 
-
     updateCounter();
+    setInterval(updateCounter, 1000);
 
-
-    setInterval(
-      updateCounter,
-      1000
-    );
-
-
-    /* =========================
-       CONFETI
-       ========================= */
 
     function lanzarConfeti() {
 
-      const emojis = [
-        "🎉",
-        "✨",
-        "💗",
-        "🎈",
-        "⭐"
-      ];
+      const emojis = ["🎉","✨","💗","🎈","⭐"];
 
+      for (let i = 0; i < 22; i++) {
 
-      for (
-        let i = 0;
-        i < 22;
-        i++
-      ) {
+        const piece = document.createElement("span");
 
-        const piece =
-          document.createElement("span");
-
-
-        piece.className =
-          "confetti-piece";
-
+        piece.className = "confetti-piece";
 
         piece.textContent =
-          emojis[
-            Math.floor(
-              Math.random() *
-              emojis.length
-            )
-          ];
-
+          emojis[Math.floor(Math.random() * emojis.length)];
 
         piece.style.left =
           Math.random() * 100 + "vw";
 
-
         piece.style.animationDelay =
-          Math.random() * 0.35 + "s";
-
+          Math.random() * .35 + "s";
 
         piece.style.fontSize =
           (14 + Math.random() * 14) + "px";
 
+        document.body.appendChild(piece);
 
-        document.body.appendChild(
-          piece
-        );
-
-
-        setTimeout(
-          () => piece.remove(),
-          2300
-        );
-
+        setTimeout(() => piece.remove(), 2300);
       }
+    }
 
+
+    function mostrarMensajeFinal() {
+
+      const message =
+        document.getElementById("finalMessage");
+
+      const button =
+        document.querySelector(".final-button");
+
+      if (message.classList.contains("show")) return;
+
+      message.classList.add("show");
+
+      button.style.opacity = "0";
+      button.style.transform = "scale(0.9)";
+      button.style.pointerEvents = "none";
+
+      lanzarSorpresaFinal();
+
+      setTimeout(() => {
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 250);
+    }
+
+
+    function cerrarMensajeFinal() {
+
+      const message =
+        document.getElementById("finalMessage");
+
+      const button =
+        document.querySelector(".final-button");
+
+      message.classList.remove("show");
+
+      setTimeout(() => {
+
+        button.style.opacity = "1";
+        button.style.transform = "scale(1)";
+        button.style.pointerEvents = "auto";
+
+        button.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 250);
+    }
+
+
+    function lanzarSorpresaFinal() {
+
+      const emojis = ["♡","✨","💗","✦","♡","⭐"];
+
+      for (let i = 0; i < 12; i++) {
+
+        const spark = document.createElement("span");
+
+        spark.className = "final-spark";
+
+        spark.textContent =
+          emojis[Math.floor(Math.random() * emojis.length)];
+
+        spark.style.setProperty(
+          "--x",
+          (Math.random() * 260 - 130) + "px"
+        );
+
+        spark.style.setProperty(
+          "--y",
+          (Math.random() * 230 - 115) + "px"
+        );
+
+        spark.style.animationDelay =
+          Math.random() * .25 + "s";
+
+        document.body.appendChild(spark);
+
+        setTimeout(() => spark.remove(), 2000);
+      }
     }
 
   </script>
 
 </body>
 </html>
+```
