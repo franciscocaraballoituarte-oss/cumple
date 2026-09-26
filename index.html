@@ -11,56 +11,65 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       font-family: "Trebuchet MS", "Segoe UI", sans-serif;
       color: #4d3c42;
+      overflow-x: hidden;
 
       background:
         radial-gradient(
-          circle at 10% 5%,
-          rgba(244, 190, 205, 0.35),
+          circle at 8% 5%,
+          rgba(244, 190, 205, 0.48),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 92% 10%,
+          rgba(145, 195, 225, 0.38),
           transparent 32%
         ),
         radial-gradient(
-          circle at 90% 90%,
-          rgba(221, 196, 232, 0.28),
+          circle at 88% 88%,
+          rgba(171, 207, 229, 0.34),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 12% 82%,
+          rgba(220, 192, 228, 0.30),
           transparent 32%
         ),
-        linear-gradient(135deg, #fff9fb, #f8f2f8);
+        linear-gradient(
+          135deg,
+          #fff8fb,
+          #f5f5fb 48%,
+          #edf5fa
+        );
     }
 
     main {
+      position: relative;
+      z-index: 2;
       width: min(920px, 92%);
       margin: 0 auto;
       padding: 60px 0 75px;
     }
 
     section {
-      margin: 0 auto 65px;
+      margin: 0 auto 70px;
       text-align: center;
-    }
-
-    /* =========================
-       PORTADA
-       ========================= */
-
-    .hero {
-      padding-top: 10px;
+      position: relative;
     }
 
     h1,
     h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 600;
-      color: #553f48;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 8vw, 4.8rem);
-      margin: 0 0 45px;
-      letter-spacing: -1px;
+      color: #4d3f49;
     }
 
     h2 {
@@ -75,60 +84,238 @@
       max-width: 680px;
     }
 
-    /* FOTO PRINCIPAL */
+
+    /* =========================
+       CORAZONES DEL FONDO
+       ========================= */
+
+    .background-hearts {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .background-heart {
+      position: absolute;
+      font-family: Georgia, serif;
+      opacity: 0.16;
+      animation: floatHeart 8s ease-in-out infinite;
+      user-select: none;
+    }
+
+    .heart-1 {
+      left: 6%;
+      top: 16%;
+      font-size: 30px;
+      color: #d47f9b;
+      animation-delay: -2s;
+    }
+
+    .heart-2 {
+      left: 87%;
+      top: 11%;
+      font-size: 42px;
+      color: #4f88ad;
+      opacity: 0.15;
+      animation-delay: -6s;
+    }
+
+    .heart-3 {
+      left: 10%;
+      top: 52%;
+      font-size: 25px;
+      color: #4f88ad;
+      opacity: 0.14;
+      animation-delay: -4s;
+    }
+
+    .heart-4 {
+      left: 91%;
+      top: 47%;
+      font-size: 33px;
+      color: #d47f9b;
+      animation-delay: -7s;
+    }
+
+    .heart-5 {
+      left: 5%;
+      top: 81%;
+      font-size: 39px;
+      color: #4f88ad;
+      opacity: 0.15;
+      animation-delay: -1s;
+    }
+
+    .heart-6 {
+      left: 84%;
+      top: 82%;
+      font-size: 28px;
+      color: #d47f9b;
+      animation-delay: -5s;
+    }
+
+    @keyframes floatHeart {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(5deg);
+      }
+    }
+
+
+    /* =========================
+       PORTADA
+       ========================= */
+
+    .hero {
+      padding-top: 8px;
+      margin-bottom: 82px;
+    }
+
+    .hero-title {
+      position: relative;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 48px;
+      padding: 0 35px;
+    }
+
+    h1 {
+      position: relative;
+      margin: 0;
+      color: #46789b;
+      font-size: clamp(3.7rem, 12vw, 7rem);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      text-shadow:
+        0 5px 18px rgba(61, 113, 148, 0.20);
+    }
+
+    .title-decoration {
+      position: absolute;
+      font-family: Georgia, serif;
+      opacity: 0.85;
+    }
+
+    .title-decoration.left {
+      left: 0;
+      top: 5px;
+      color: #d27f9a;
+      font-size: 1.8rem;
+      transform: rotate(-15deg);
+    }
+
+    .title-decoration.right {
+      right: 0;
+      bottom: 2px;
+      color: #4f88ad;
+      font-size: 2rem;
+      transform: rotate(12deg);
+    }
+
+    .title-decoration.extra-left {
+      left: 12px;
+      bottom: -18px;
+      color: #739fba;
+      font-size: 0.95rem;
+      transform: rotate(15deg);
+    }
+
+    .title-decoration.extra-right {
+      right: 10px;
+      top: -18px;
+      color: #d47f9b;
+      font-size: 1rem;
+      transform: rotate(-10deg);
+    }
 
     .main-photo {
       display: block;
-
       width: min(470px, 88%);
       max-height: 560px;
-
       object-fit: cover;
-
       margin: 0 auto 22px;
-
       border-radius: 20px;
-
       box-shadow:
-        0 12px 35px rgba(72, 49, 61, 0.14);
+        0 12px 35px rgba(72, 49, 61, 0.14),
+        0 0 0 4px rgba(112, 169, 199, 0.12);
     }
-
-    /* BOTÓN 🎉 */
 
     .confetti-btn {
       width: 54px;
       height: 54px;
-
-      border: none;
+      border: 2px solid rgba(90, 150, 190, 0.25);
       border-radius: 50%;
-
-      background: white;
-
+      background: rgba(255, 255, 255, 0.92);
       box-shadow:
-        0 7px 22px rgba(72, 49, 61, 0.14);
-
+        0 7px 22px rgba(72, 49, 61, 0.14),
+        0 0 18px rgba(90, 160, 200, 0.12);
       font-size: 1.45rem;
-
       cursor: pointer;
-
-      transition: transform 0.18s ease;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
     }
 
     .confetti-btn:hover {
       transform: translateY(-2px) scale(1.04);
+
+      box-shadow:
+        0 8px 24px rgba(72, 49, 61, 0.17),
+        0 0 22px rgba(90, 160, 200, 0.20);
     }
 
     .confetti-btn:active {
       transform: scale(0.95);
     }
 
-    .love-text {
-      margin-top: 22px;
+    .love-card {
+      width: fit-content;
+      max-width: 90%;
+      margin: 23px auto 0;
+      padding: 13px 30px;
+      border-radius: 50px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.88),
+          rgba(221, 239, 249, 0.92)
+        );
 
-      font-size: 1.3rem;
+      border: 1px solid rgba(75, 135, 174, 0.28);
+
+      box-shadow:
+        0 8px 25px rgba(72, 49, 61, 0.08),
+        0 0 20px rgba(90, 160, 200, 0.10);
     }
+
+    .love-text {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      color: #4c7188;
+    }
+
+
+    /* =========================
+       SEPARADORES
+       ========================= */
+
+    .section-divider {
+      margin: -30px auto 55px;
+      color: #5f91af;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      letter-spacing: 5px;
+      opacity: 0.82;
+    }
+
 
     /* =========================
        CONTADOR
@@ -136,49 +323,46 @@
 
     .counter-box {
       width: min(760px, 100%);
-
       margin: 0 auto;
-
       padding: 25px 18px;
-
       border-radius: 22px;
 
-      background: rgba(255, 255, 255, 0.68);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.76),
+          rgba(228, 241, 249, 0.80)
+        );
+
+      border: 1px solid rgba(70, 130, 170, 0.25);
 
       box-shadow:
-        0 10px 30px rgba(72, 49, 61, 0.08);
+        0 10px 30px rgba(72, 49, 61, 0.08),
+        0 0 25px rgba(90, 160, 200, 0.08);
 
       display: grid;
-
       grid-template-columns:
         repeat(5, 1fr);
-
       gap: 10px;
     }
 
     .counter-number {
       display: block;
-
       font-family: Georgia, "Times New Roman", serif;
-
       font-size: clamp(1.45rem, 4vw, 2rem);
-
-      color: #5c414b;
+      color: #427797;
     }
 
     .counter-label {
       display: block;
-
       margin-top: 5px;
-
       font-size: 0.78rem;
-
       text-transform: uppercase;
-
       letter-spacing: 0.7px;
-
-      opacity: 0.72;
+      color: #53616a;
+      opacity: 0.78;
     }
+
 
     /* =========================
        GALERÍA
@@ -186,39 +370,41 @@
 
     .gallery {
       display: grid;
-
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
-
       gap: 20px;
-
       width: min(760px, 100%);
-
       margin: 0 auto;
+      align-items: start;
     }
-
-    /* Cada tarjeta */
 
     .photo-card {
       perspective: 1000px;
-
       cursor: pointer;
+      width: 100%;
     }
 
     .photo-inner {
       position: relative;
-
       width: 100%;
-
-      aspect-ratio: 4 / 5;
-
+      height: 360px;
       transform-style: preserve-3d;
-
       transition:
         transform 0.6s ease;
     }
 
-    /* Cuando se toca */
+    /*
+      Las horizontales son más bajas.
+      Las verticales ocupan más altura.
+    */
+
+    .photo-card.vertical .photo-inner {
+      height: 430px;
+    }
+
+    .photo-card.horizontal .photo-inner {
+      height: 245px;
+    }
 
     .photo-card.flipped .photo-inner {
       transform: rotateY(180deg);
@@ -227,110 +413,165 @@
     .photo-front,
     .photo-back {
       position: absolute;
-
       inset: 0;
-
       overflow: hidden;
-
       border-radius: 18px;
-
       backface-visibility: hidden;
 
       box-shadow:
-        0 9px 25px rgba(72, 49, 61, 0.11);
+        0 9px 25px rgba(72, 49, 61, 0.13),
+        0 0 0 2px rgba(87, 145, 177, 0.10);
     }
 
-    /* Frente */
-
     .photo-front {
-      background: #eee;
+      background: #e7eef2;
     }
 
     .photo-front img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
       display: block;
     }
 
-    /* Parte de atrás */
-
     .photo-back {
       transform: rotateY(180deg);
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       padding: 28px;
-
       text-align: center;
 
-      background: rgba(255, 255, 255, 0.86);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.96),
+          rgba(215, 235, 247, 0.98)
+        );
+
+      border: 1px solid rgba(65, 130, 170, 0.25);
     }
 
     .photo-back p {
       font-family: Georgia, "Times New Roman", serif;
-
       font-size: 1.15rem;
-
-      color: #624851;
+      color: #4c7188;
     }
 
+
     /* =========================
-       SECCIÓN FOT0CHAT
+       HISTORIA / FOTOCHAT
        ========================= */
 
     .origin-card {
       width: min(720px, 100%);
-
       margin: 0 auto;
+      padding: 34px 28px;
+      border-radius: 24px;
 
-      padding: 30px 25px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(222, 239, 248, 0.84)
+        );
 
-      border-radius: 22px;
-
-      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(70, 130, 170, 0.22);
 
       box-shadow:
-        0 10px 30px rgba(72, 49, 61, 0.08);
+        0 10px 30px rgba(72, 49, 61, 0.08),
+        0 0 25px rgba(90, 160, 200, 0.07);
+    }
+
+    .origin-card h2 {
+      margin-bottom: 18px;
+      color: #4d6f84;
     }
 
     .origin-date {
       font-family: Georgia, "Times New Roman", serif;
-
       font-size: 1.2rem;
-
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      color: #4b84a3;
     }
+
+    .origin-text {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 19px 22px;
+      border-radius: 17px;
+
+      background: rgba(255, 255, 255, 0.72);
+
+      border: 1px solid rgba(70, 130, 170, 0.15);
+
+      box-shadow:
+        0 5px 18px rgba(72, 49, 61, 0.05);
+    }
+
 
     /* =========================
        FINAL
        ========================= */
 
+    .final-section {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .final-card {
+      width: min(720px, 100%);
+      margin: 0 auto 30px;
+      padding: 32px 28px;
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.86),
+          rgba(218, 237, 248, 0.92)
+        );
+
+      border: 1px solid rgba(67, 131, 171, 0.25);
+
+      box-shadow:
+        0 10px 30px rgba(72, 49, 61, 0.09),
+        0 0 28px rgba(90, 160, 200, 0.10);
+    }
+
+    .final-card::before {
+      content: "♡  ✦  ♡";
+      display: block;
+      margin-bottom: 10px;
+      color: #5689a7;
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      letter-spacing: 5px;
+      opacity: 0.85;
+    }
+
     .final-text {
       font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.35rem;
-
-      margin-bottom: 28px;
+      font-size: clamp(1.45rem, 4vw, 1.85rem);
+      line-height: 1.45;
+      margin: 0 auto;
+      color: #4b6f84;
+      max-width: 580px;
     }
 
     .final-photo {
+      display: block;
       width: min(420px, 88%);
-
       max-height: 520px;
-
       object-fit: cover;
-
+      margin: 0 auto;
       border-radius: 20px;
 
       box-shadow:
-        0 12px 35px rgba(72, 49, 61, 0.13);
+        0 12px 35px rgba(72, 49, 61, 0.13),
+        0 0 0 4px rgba(91, 151, 184, 0.12);
     }
+
 
     /* =========================
        CONFETI
@@ -338,16 +579,11 @@
 
     .confetti-piece {
       position: fixed;
-
       top: -30px;
-
       z-index: 9999;
-
       pointer-events: none;
-
       animation:
         fall 1.8s ease-out forwards;
-
       font-size: 20px;
     }
 
@@ -356,7 +592,6 @@
         transform:
           translateY(0)
           rotate(0deg);
-
         opacity: 1;
       }
 
@@ -364,10 +599,10 @@
         transform:
           translateY(105vh)
           rotate(540deg);
-
         opacity: 0;
       }
     }
+
 
     /* =========================
        CELULAR
@@ -376,30 +611,81 @@
     @media (max-width: 600px) {
 
       main {
+        width: min(92%, 500px);
         padding-top: 42px;
       }
 
+      .hero {
+        margin-bottom: 70px;
+      }
+
+      .hero-title {
+        margin-bottom: 38px;
+        padding: 0 23px;
+      }
+
       h1 {
-        margin-bottom: 32px;
+        font-size: clamp(3.1rem, 16vw, 4.8rem);
+        letter-spacing: -1.5px;
+      }
+
+      .title-decoration.left {
+        left: 0;
+        top: 1px;
+        font-size: 1.25rem;
+      }
+
+      .title-decoration.right {
+        right: 0;
+        bottom: 0;
+        font-size: 1.4rem;
+      }
+
+      .title-decoration.extra-left {
+        left: 6px;
+        bottom: -15px;
+        font-size: 0.75rem;
+      }
+
+      .title-decoration.extra-right {
+        right: 5px;
+        top: -15px;
+        font-size: 0.75rem;
+      }
+
+      .love-card {
+        padding: 11px 22px;
       }
 
       .counter-box {
         grid-template-columns:
           repeat(5, minmax(0, 1fr));
-
         gap: 3px;
-
         padding: 20px 8px;
       }
 
       .counter-label {
         font-size: 0.62rem;
-
         letter-spacing: 0.2px;
       }
 
       .gallery {
-        gap: 13px;
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        width: 100%;
+      }
+
+      .photo-inner {
+        height: 280px;
+      }
+
+      .photo-card.vertical .photo-inner {
+        height: 340px;
+      }
+
+      .photo-card.horizontal .photo-inner {
+        height: 185px;
       }
 
       .photo-back {
@@ -408,6 +694,27 @@
 
       .photo-back p {
         font-size: 0.98rem;
+      }
+
+      .origin-card {
+        padding: 28px 20px;
+      }
+
+      .origin-text {
+        padding: 16px 17px;
+      }
+
+      .final-card {
+        padding: 27px 20px;
+      }
+
+      .section-divider {
+        margin-top: -22px;
+        margin-bottom: 48px;
+      }
+
+      .background-heart {
+        opacity: 0.13;
       }
     }
 
@@ -420,33 +727,91 @@
       .counter-label {
         font-size: 0.55rem;
       }
+
+      .gallery {
+        gap: 11px;
+      }
+
+      .photo-card.vertical .photo-inner {
+        height: 310px;
+      }
+
+      .photo-card.horizontal .photo-inner {
+        height: 165px;
+      }
     }
   </style>
 </head>
 
-
 <body>
+
+
+  <!-- =========================
+       CORAZONES DEL FONDO
+       ========================= -->
+
+  <div class="background-hearts" aria-hidden="true">
+
+    <span class="background-heart heart-1">
+      ♡
+    </span>
+
+    <span class="background-heart heart-2">
+      ♡
+    </span>
+
+    <span class="background-heart heart-3">
+      ♡
+    </span>
+
+    <span class="background-heart heart-4">
+      ♡
+    </span>
+
+    <span class="background-heart heart-5">
+      ♡
+    </span>
+
+    <span class="background-heart heart-6">
+      ♡
+    </span>
+
+  </div>
+
 
   <main>
 
-    <!-- ========================================
+
+    <!-- =========================
          PORTADA
-         ======================================== -->
+         ========================= -->
 
     <section class="hero">
 
-      <h1>Feliz cumple</h1>
+      <div class="hero-title">
 
+        <span class="title-decoration left">
+          ✦
+        </span>
 
-      <!--
-        FOTO PRINCIPAL
+        <span class="title-decoration extra-left">
+          ♡
+        </span>
 
-        Poné tu foto en la misma carpeta que este HTML
-        y llamala "foto-principal.jpg"
+        <h1>
+          Feliz cumple
+        </h1>
 
-        Si tiene otro nombre, cambiá solamente:
-        foto-principal.jpg
-      -->
+        <span class="title-decoration right">
+          ♡
+        </span>
+
+        <span class="title-decoration extra-right">
+          ✦
+        </span>
+
+      </div>
+
 
       <img
         class="main-photo"
@@ -454,8 +819,6 @@
         alt=""
       >
 
-
-      <!-- BOTÓN 🎉 -->
 
       <button
         class="confetti-btn"
@@ -466,26 +829,32 @@
       </button>
 
 
-      <p class="love-text">
-        Te amo mucho.
-      </p>
+      <div class="love-card">
+
+        <p class="love-text">
+          Te amo mucho.
+        </p>
+
+      </div>
 
     </section>
 
 
-
-    <!-- ========================================
+    <!-- =========================
          TIEMPO JUNTOS
-         ======================================== -->
+         ========================= -->
 
     <section>
 
-      <h2>Tiempo Juntos</h2>
+      <h2>
+        Tiempo Juntos
+      </h2>
 
 
       <div class="counter-box">
 
         <div>
+
           <span
             class="counter-number"
             id="months"
@@ -496,10 +865,12 @@
           <span class="counter-label">
             meses
           </span>
+
         </div>
 
 
         <div>
+
           <span
             class="counter-number"
             id="days"
@@ -510,10 +881,12 @@
           <span class="counter-label">
             días
           </span>
+
         </div>
 
 
         <div>
+
           <span
             class="counter-number"
             id="hours"
@@ -524,10 +897,12 @@
           <span class="counter-label">
             horas
           </span>
+
         </div>
 
 
         <div>
+
           <span
             class="counter-number"
             id="minutes"
@@ -538,10 +913,12 @@
           <span class="counter-label">
             minutos
           </span>
+
         </div>
 
 
         <div>
+
           <span
             class="counter-number"
             id="seconds"
@@ -552,6 +929,7 @@
           <span class="counter-label">
             segundos
           </span>
+
         </div>
 
       </div>
@@ -559,10 +937,14 @@
     </section>
 
 
+    <div class="section-divider">
+      ─── ♡ ───
+    </div>
 
-    <!-- ========================================
-         RECUERDOS
-         ======================================== -->
+
+    <!-- =========================
+         GALERÍA
+         ========================= -->
 
     <section>
 
@@ -574,17 +956,14 @@
       <div class="gallery">
 
 
-        <!-- ===============================
-             FOTO 1
-             =============================== -->
+        <!-- VERTICAL 1 -->
 
         <div
-          class="photo-card"
+          class="photo-card vertical"
           onclick="this.classList.toggle('flipped')"
         >
 
           <div class="photo-inner">
-
 
             <div class="photo-front">
 
@@ -595,7 +974,6 @@
 
             </div>
 
-
             <div class="photo-back">
 
               <p>
@@ -604,24 +982,19 @@
 
             </div>
 
-
           </div>
 
         </div>
 
 
-
-        <!-- ===============================
-             FOTO 2
-             =============================== -->
+        <!-- VERTICAL 2 -->
 
         <div
-          class="photo-card"
+          class="photo-card vertical"
           onclick="this.classList.toggle('flipped')"
         >
 
           <div class="photo-inner">
-
 
             <div class="photo-front">
 
@@ -632,33 +1005,27 @@
 
             </div>
 
-
             <div class="photo-back">
 
               <p>
-                Qué lindo ese día.
+                Siempre el goes❤️💙
               </p>
 
             </div>
-
 
           </div>
 
         </div>
 
 
-
-        <!-- ===============================
-             FOTO 3
-             =============================== -->
+        <!-- HORIZONTAL 1 -->
 
         <div
-          class="photo-card"
+          class="photo-card horizontal"
           onclick="this.classList.toggle('flipped')"
         >
 
           <div class="photo-inner">
-
 
             <div class="photo-front">
 
@@ -669,33 +1036,27 @@
 
             </div>
 
-
             <div class="photo-back">
 
               <p>
-                Siempre el goes ❤️💙
+                Una muestra de lo mucho que me aguantas
               </p>
 
             </div>
-
 
           </div>
 
         </div>
 
 
-
-        <!-- ===============================
-             FOTO 4
-             =============================== -->
+        <!-- HORIZONTAL 2 -->
 
         <div
-          class="photo-card"
+          class="photo-card horizontal"
           onclick="this.classList.toggle('flipped')"
         >
 
           <div class="photo-inner">
-
 
             <div class="photo-front">
 
@@ -706,30 +1067,93 @@
 
             </div>
 
-
             <div class="photo-back">
 
               <p>
-                Por muchas más siestas juntitos❤️
+                Por muchas más siestas juntitos ❤️
               </p>
 
             </div>
-
 
           </div>
 
         </div>
 
 
+        <!-- VERTICAL 3 -->
+
+        <div
+          class="photo-card vertical"
+          onclick="this.classList.toggle('flipped')"
+        >
+
+          <div class="photo-inner">
+
+            <div class="photo-front">
+
+              <img
+                src="foto5.jpeg"
+                alt=""
+              >
+
+            </div>
+
+            <div class="photo-back">
+
+              <p>
+                Uno de los días más felices de mi vida❤️
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- VERTICAL 4 -->
+
+        <div
+          class="photo-card vertical"
+          onclick="this.classList.toggle('flipped')"
+        >
+
+          <div class="photo-inner">
+
+            <div class="photo-front">
+
+              <img
+                src="foto6.jpeg"
+                alt=""
+              >
+
+            </div>
+
+            <div class="photo-back">
+
+              <p>
+                Quiero otro verano contigo
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
 
 
+    <div class="section-divider">
+      ─── ♡ ───
+    </div>
 
-    <!-- ========================================
-         EL DÍA QUE EMPEZAMOS A HABLAR
-         ======================================== -->
+
+    <!-- =========================
+         ORIGEN
+         ========================= -->
 
     <section>
 
@@ -739,42 +1163,42 @@
           El día que empezamos a hablar
         </h2>
 
-
         <div class="origin-date">
           30 de agosto de 2024
         </div>
 
+        <div class="origin-text">
 
-        <p>
-          No sé qué sería de mí si nunca te votaba ese FotoChat.
-        </p>
+          <p>
+            No sé qué sería de mí si nunca te votaba ese FotoChat.
+          </p>
+
+        </div>
 
       </div>
 
     </section>
 
 
+    <div class="section-divider">
+      ─── ♡ ───
+    </div>
 
-    <!-- ========================================
+
+    <!-- =========================
          FINAL
-         ======================================== -->
+         ========================= -->
 
-    <section>
+    <section class="final-section">
 
-      <p class="final-text">
-        Espero que la pases muy lindo en tu día
-      </p>
+      <div class="final-card">
 
+        <p class="final-text">
+          Espero que la pases muy lindo en tu día
+        </p>
 
-      <!--
-        FOTO FINAL
+      </div>
 
-        Poné una foto llamada:
-        foto-final.jpg
-
-        También podés eliminar esta línea
-        si al final no querés poner una foto.
-      -->
 
       <img
         class="final-photo"
@@ -788,20 +1212,12 @@
   </main>
 
 
-
-  <!-- ========================================
-       JAVASCRIPT
-       ======================================== -->
-
   <script>
 
-    /* ========================================
-       CONTADOR
-       ========================================
 
-       FECHA DE INICIO:
-       19 de noviembre de 2025
-    */
+    /* =========================
+       CONTADOR
+       ========================= */
 
     const START =
       new Date("2025-11-19T00:00:00-03:00");
@@ -812,32 +1228,19 @@
       const now = new Date();
 
 
-      /*
-        Primero calculamos los meses completos.
-      */
-
       let months =
         (now.getFullYear() - START.getFullYear()) * 12 +
         (now.getMonth() - START.getMonth());
 
 
-      /*
-        Creamos una fecha de referencia
-        sumando esos meses.
-      */
-
       let anchor =
         new Date(START);
+
 
       anchor.setMonth(
         anchor.getMonth() + months
       );
 
-
-      /*
-        Si todavía no llegó a esa fecha,
-        significa que contamos un mes de más.
-      */
 
       if (anchor > now) {
 
@@ -849,13 +1252,9 @@
         anchor.setMonth(
           anchor.getMonth() + months
         );
+
       }
 
-
-      /*
-        Ahora calculamos los días,
-        horas, minutos y segundos restantes.
-      */
 
       let diff =
         now - anchor;
@@ -866,6 +1265,7 @@
           diff / 86400000
         );
 
+
       diff %= 86400000;
 
 
@@ -874,6 +1274,7 @@
           diff / 3600000
         );
 
+
       diff %= 3600000;
 
 
@@ -881,6 +1282,7 @@
         Math.floor(
           diff / 60000
         );
+
 
       diff %= 60000;
 
@@ -891,21 +1293,21 @@
         );
 
 
-      /*
-        Mostramos los resultados.
-      */
-
       document.getElementById("months")
         .textContent = months;
+
 
       document.getElementById("days")
         .textContent = days;
 
+
       document.getElementById("hours")
         .textContent = hours;
 
+
       document.getElementById("minutes")
         .textContent = minutes;
+
 
       document.getElementById("seconds")
         .textContent = seconds;
@@ -913,16 +1315,8 @@
     }
 
 
-    /*
-      Actualizar inmediatamente
-    */
-
     updateCounter();
 
-
-    /*
-      Actualizar cada segundo
-    */
 
     setInterval(
       updateCounter,
@@ -930,10 +1324,9 @@
     );
 
 
-
-    /* ========================================
-       CONFETI 🎉
-       ======================================== */
+    /* =========================
+       CONFETI
+       ========================= */
 
     function lanzarConfeti() {
 
