@@ -311,6 +311,538 @@
       }
     }
 
+
+    /* =========================================================
+       REGALO + FLORES
+       ========================================================= */
+
+    .flower-gift-section {
+      margin: 38px auto 30px;
+      text-align: center;
+    }
+
+    .flower-gift {
+      position: relative;
+      width: min(470px, 94%);
+      height: 410px;
+      margin: 0 auto;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .flower-gift::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: rgba(255, 221, 92, .18);
+      filter: blur(48px);
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+
+    .flower-gift.open::before {
+      opacity: 1;
+    }
+
+    /* FLORES */
+
+    .gift-flowers {
+      position: absolute;
+      left: 50%;
+      bottom: 122px;
+      width: 330px;
+      height: 270px;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .gift-flower {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      width: 95px;
+      height: 205px;
+      transform-origin: bottom center;
+      opacity: 0;
+      transform:
+        translateX(-50%)
+        translateY(100px)
+        scale(.35)
+        rotate(0deg);
+      transition:
+        transform 1.05s cubic-bezier(.18,.85,.25,1.15),
+        opacity .5s ease;
+    }
+
+    .flower-gift.open .gift-flower {
+      opacity: 1;
+    }
+
+    /* Flores más juntas */
+
+    .gift-flower:nth-child(1) {
+      margin-left: -100px;
+      transition-delay: .08s;
+    }
+
+    .gift-flower:nth-child(2) {
+      margin-left: -50px;
+      transition-delay: .19s;
+    }
+
+    .gift-flower:nth-child(3) {
+      margin-left: 0;
+      transition-delay: .30s;
+    }
+
+    .gift-flower:nth-child(4) {
+      margin-left: 50px;
+      transition-delay: .41s;
+    }
+
+    .gift-flower:nth-child(5) {
+      margin-left: 100px;
+      transition-delay: .52s;
+    }
+
+    .flower-gift.open .gift-flower:nth-child(1) {
+      transform:
+        translateX(-50%)
+        translateY(-10px)
+        scale(1)
+        rotate(-20deg);
+    }
+
+    .flower-gift.open .gift-flower:nth-child(2) {
+      transform:
+        translateX(-50%)
+        translateY(-48px)
+        scale(1.04)
+        rotate(-9deg);
+    }
+
+    .flower-gift.open .gift-flower:nth-child(3) {
+      transform:
+        translateX(-50%)
+        translateY(-72px)
+        scale(1.12)
+        rotate(0deg);
+    }
+
+    .flower-gift.open .gift-flower:nth-child(4) {
+      transform:
+        translateX(-50%)
+        translateY(-48px)
+        scale(1.04)
+        rotate(9deg);
+    }
+
+    .flower-gift.open .gift-flower:nth-child(5) {
+      transform:
+        translateX(-50%)
+        translateY(-10px)
+        scale(1)
+        rotate(20deg);
+    }
+
+    .flower-stem {
+      position: absolute;
+      width: 6px;
+      height: 150px;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      background:
+        linear-gradient(
+          90deg,
+          #668d50,
+          #91b86f,
+          #60874b
+        );
+      transform-origin: bottom center;
+      box-shadow: 1px 0 2px rgba(63,98,48,.10);
+    }
+
+    .flower-leaf {
+      position: absolute;
+      width: 40px;
+      height: 19px;
+      bottom: 56px;
+      background:
+        linear-gradient(
+          135deg,
+          #a3c77e,
+          #709b58
+        );
+      border-radius: 100% 0 100% 0;
+      box-shadow: inset 1px 1px 2px rgba(255,255,255,.25);
+    }
+
+    .flower-leaf.left {
+      left: 8px;
+      transform: rotate(28deg);
+    }
+
+    .flower-leaf.right {
+      right: 8px;
+      transform: scaleX(-1) rotate(28deg);
+    }
+
+    .flower-head {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 4px 4px rgba(160,120,20,.12));
+    }
+
+    .petal {
+      position: absolute;
+      width: 34px;
+      height: 48px;
+      left: 50%;
+      top: 50%;
+      transform-origin: 50% 100%;
+      margin-left: -17px;
+      margin-top: -44px;
+      border-radius: 55% 55% 48% 48%;
+      background:
+        linear-gradient(
+          145deg,
+          #fff38a,
+          #f6ca35
+        );
+      box-shadow:
+        0 2px 5px rgba(178,132,20,.16),
+        inset 0 1px 2px rgba(255,255,255,.45);
+    }
+
+    .petal:nth-child(1) {
+      transform: rotate(0deg) translateY(-2px);
+    }
+
+    .petal:nth-child(2) {
+      transform: rotate(45deg) translateY(-2px);
+    }
+
+    .petal:nth-child(3) {
+      transform: rotate(90deg) translateY(-2px);
+    }
+
+    .petal:nth-child(4) {
+      transform: rotate(135deg) translateY(-2px);
+    }
+
+    .petal:nth-child(5) {
+      transform: rotate(180deg) translateY(-2px);
+    }
+
+    .petal:nth-child(6) {
+      transform: rotate(225deg) translateY(-2px);
+    }
+
+    .petal:nth-child(7) {
+      transform: rotate(270deg) translateY(-2px);
+    }
+
+    .petal:nth-child(8) {
+      transform: rotate(315deg) translateY(-2px);
+    }
+
+    .flower-center {
+      position: absolute;
+      z-index: 3;
+      width: 31px;
+      height: 31px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #fff1a0,
+          #e8ae27 70%
+        );
+      box-shadow:
+        0 2px 5px rgba(150,105,15,.20);
+    }
+
+    /* =========================================================
+       CAJA DEL REGALO
+       ========================================================= */
+
+    .gift-box {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      bottom: 10px;
+      width: 290px;
+      height: 180px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 15px 18px rgba(72,49,61,.18));
+
+      /*
+        Primero deja que se vea la apertura.
+        Después baja y desaparece.
+      */
+      transition:
+        transform 1s cubic-bezier(.25,.75,.3,1) .55s,
+        opacity .65s ease 1.05s,
+        filter .8s ease .55s;
+    }
+
+    .gift-body {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 145px;
+      border-radius: 8px 8px 14px 14px;
+      background:
+        linear-gradient(
+          90deg,
+          #e9a1b7 0 43%,
+          #f3bdcd 43% 57%,
+          #e9a1b7 57%
+        );
+      box-shadow:
+        inset 0 3px 0 rgba(255,255,255,.30);
+    }
+
+    .gift-lid {
+      position: absolute;
+      z-index: 5;
+      left: -12px;
+      top: 12px;
+      width: calc(100% + 24px);
+      height: 48px;
+      border-radius: 9px;
+      background:
+        linear-gradient(
+          90deg,
+          #df91aa 0 43%,
+          #efb1c3 43% 57%,
+          #df91aa 57%
+        );
+      box-shadow:
+        0 6px 8px rgba(72,49,61,.15);
+      transform-origin: 18% 100%;
+      transition:
+        transform .8s cubic-bezier(.2,.8,.25,1),
+        top .8s cubic-bezier(.2,.8,.25,1);
+    }
+
+    .gift-ribbon {
+      position: absolute;
+      z-index: 6;
+      left: 50%;
+      top: 0;
+      width: 42px;
+      height: 100%;
+      transform: translateX(-50%);
+      background: rgba(255,244,177,.88);
+    }
+
+    .gift-bow {
+      position: absolute;
+      z-index: 8;
+      left: 50%;
+      top: -27px;
+      width: 76px;
+      height: 52px;
+      transform: translateX(-50%);
+      transition:
+        transform .8s cubic-bezier(.2,.8,.25,1);
+    }
+
+    .bow-left,
+    .bow-right {
+      position: absolute;
+      top: 10px;
+      width: 42px;
+      height: 31px;
+      border-radius: 70% 25% 70% 25%;
+      background: #f4cf62;
+      box-shadow: inset 0 2px 3px rgba(255,255,255,.35);
+    }
+
+    .bow-left {
+      left: 0;
+      transform: rotate(22deg);
+    }
+
+    .bow-right {
+      right: 0;
+      transform: scaleX(-1) rotate(22deg);
+    }
+
+    .bow-center {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      top: 17px;
+      width: 25px;
+      height: 25px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: #e4b53e;
+    }
+
+    /* TAPA SE ABRE */
+
+    .flower-gift.open .gift-lid {
+      top: -72px;
+      transform: rotate(-14deg) translateX(-8px);
+    }
+
+    .flower-gift.open .gift-bow {
+      transform:
+        translateX(-50%)
+        translateY(-74px)
+        rotate(-14deg);
+    }
+
+    /* CAJA SE VA HACIA ABAJO Y DESAPARECE */
+
+    .flower-gift.open .gift-box {
+      transform:
+        translateX(-50%)
+        translateY(185px)
+        scale(.82);
+      opacity: 0;
+      filter:
+        drop-shadow(0 8px 8px rgba(72,49,61,0));
+    }
+
+    /* =========================================================
+       BRILLITOS DEL REGALO
+       ========================================================= */
+
+    .gift-spark {
+      position: absolute;
+      z-index: 9;
+      color: #f1c84b;
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flower-gift.open .gift-spark {
+      animation: giftSpark .9s ease-out forwards;
+    }
+
+    .gift-spark:nth-child(1) {
+      left: 19%;
+      top: 24%;
+      animation-delay: .45s;
+    }
+
+    .gift-spark:nth-child(2) {
+      right: 18%;
+      top: 19%;
+      animation-delay: .65s;
+    }
+
+    .gift-spark:nth-child(3) {
+      left: 29%;
+      top: 8%;
+      animation-delay: .8s;
+    }
+
+    .gift-spark:nth-child(4) {
+      right: 30%;
+      top: 10%;
+      animation-delay: .95s;
+    }
+
+    @keyframes giftSpark {
+
+      0% {
+        opacity: 0;
+        transform: scale(.3) rotate(0);
+      }
+
+      40% {
+        opacity: 1;
+        transform: scale(1.2) rotate(30deg);
+      }
+
+      100% {
+        opacity: 0;
+        transform:
+          scale(.8)
+          rotate(70deg)
+          translateY(-15px);
+      }
+    }
+
+    /* =========================================================
+       MENSAJE DE LAS FLORES
+       ========================================================= */
+
+    .gift-message {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      bottom: -4px;
+      width: 100%;
+      transform:
+        translateX(-50%)
+        translateY(18px);
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.25rem,4vw,1.6rem);
+      color: #c49328;
+      opacity: 0;
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+      transition-delay: 1.25s;
+      text-shadow:
+        0 2px 10px rgba(196,147,40,.12);
+    }
+
+    .flower-gift.open .gift-message {
+      opacity: 1;
+      transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    /* TEXTO DE AYUDA */
+
+    .gift-hint {
+      width: 100%;
+      margin: 3px auto 0;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: .95rem;
+      color: #6d8797;
+      opacity: .75;
+      transition:
+        opacity .4s ease,
+        transform .4s ease;
+    }
+
+    .flower-gift.open + .gift-hint {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+
     .love-card {
       width: fit-content;
       max-width: 90%;
@@ -412,6 +944,7 @@
     }
 
     /* GALERÍA */
+
     .gallery {
       display: flex;
       flex-direction: column;
@@ -807,6 +1340,7 @@
       }
 
       /* LUCES EN CELULAR */
+
       .moving-light {
         width: 340px;
         height: 340px;
@@ -884,6 +1418,109 @@
         margin-bottom: 27px;
       }
 
+      .flower-gift-section {
+        margin-top: 30px;
+      }
+
+      .flower-gift {
+        width: 100%;
+        height: 385px;
+      }
+
+      .gift-flowers {
+        width: 300px;
+        height: 250px;
+        bottom: 108px;
+      }
+
+      .gift-box {
+        width: 245px;
+        height: 155px;
+      }
+
+      .gift-body {
+        height: 125px;
+      }
+
+      .gift-flower {
+        width: 85px;
+        height: 195px;
+        transform:
+          translateX(-50%)
+          translateY(90px)
+          scale(.8);
+      }
+
+      .gift-flower:nth-child(1) {
+        margin-left: -82px;
+      }
+
+      .gift-flower:nth-child(2) {
+        margin-left: -41px;
+      }
+
+      .gift-flower:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .gift-flower:nth-child(4) {
+        margin-left: 41px;
+      }
+
+      .gift-flower:nth-child(5) {
+        margin-left: 82px;
+      }
+
+      .flower-gift.open .gift-flower:nth-child(1) {
+        transform:
+          translateX(-50%)
+          translateY(-5px)
+          scale(.76)
+          rotate(-20deg);
+      }
+
+      .flower-gift.open .gift-flower:nth-child(2) {
+        transform:
+          translateX(-50%)
+          translateY(-34px)
+          scale(.80)
+          rotate(-9deg);
+      }
+
+      .flower-gift.open .gift-flower:nth-child(3) {
+        transform:
+          translateX(-50%)
+          translateY(-53px)
+          scale(.86)
+          rotate(0deg);
+      }
+
+      .flower-gift.open .gift-flower:nth-child(4) {
+        transform:
+          translateX(-50%)
+          translateY(-34px)
+          scale(.80)
+          rotate(9deg);
+      }
+
+      .flower-gift.open .gift-flower:nth-child(5) {
+        transform:
+          translateX(-50%)
+          translateY(-5px)
+          scale(.76)
+          rotate(20deg);
+      }
+
+      .gift-message {
+        bottom: -2px;
+        font-size: 1.28rem;
+      }
+
+      .gift-hint {
+        margin-top: 3px;
+        font-size: .92rem;
+      }
+
       .love-card {
         padding: 11px 22px;
       }
@@ -904,6 +1541,7 @@
       }
 
       /* GALERÍA EN CELULAR */
+
       .gallery {
         display: flex;
         flex-direction: column;
@@ -1098,6 +1736,7 @@
 <body>
 
   <!-- LUCES SUAVES EN MOVIMIENTO -->
+
   <div class="moving-background" aria-hidden="true">
     <span class="moving-light light-1"></span>
     <span class="moving-light light-2"></span>
@@ -1143,15 +1782,219 @@
     🎉
   </button>
 
-  <div class="love-card">
-    <p class="love-text">
-      <span class="love-heart">♡</span>
-      Te amo mucho.
-      <span class="love-heart right">♡</span>
+
+  <!-- REGALO CON FLORES -->
+
+  <section class="flower-gift-section">
+
+    <div
+      class="flower-gift"
+      id="flowerGift"
+      onclick="abrirRegalo()"
+      role="button"
+      tabindex="0"
+      aria-label="Abrir regalo"
+    >
+
+      <div class="gift-flowers">
+
+        <!-- FLOR 1 -->
+        <div class="gift-flower">
+
+          <div class="flower-stem"></div>
+
+          <div class="flower-leaf left"></div>
+          <div class="flower-leaf right"></div>
+
+          <div class="flower-head">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+            <span class="flower-center"></span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLOR 2 -->
+        <div class="gift-flower">
+
+          <div class="flower-stem"></div>
+
+          <div class="flower-leaf left"></div>
+          <div class="flower-leaf right"></div>
+
+          <div class="flower-head">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+            <span class="flower-center"></span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLOR 3 -->
+        <div class="gift-flower">
+
+          <div class="flower-stem"></div>
+
+          <div class="flower-leaf left"></div>
+          <div class="flower-leaf right"></div>
+
+          <div class="flower-head">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+            <span class="flower-center"></span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLOR 4 -->
+        <div class="gift-flower">
+
+          <div class="flower-stem"></div>
+
+          <div class="flower-leaf left"></div>
+          <div class="flower-leaf right"></div>
+
+          <div class="flower-head">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+            <span class="flower-center"></span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLOR 5 -->
+        <div class="gift-flower">
+
+          <div class="flower-stem"></div>
+
+          <div class="flower-leaf left"></div>
+          <div class="flower-leaf right"></div>
+
+          <div class="flower-head">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+            <span class="flower-center"></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BRILLITOS -->
+
+      <span class="gift-spark">✦</span>
+      <span class="gift-spark">✦</span>
+      <span class="gift-spark">✦</span>
+      <span class="gift-spark">✦</span>
+
+
+      <!-- CAJA -->
+
+      <div class="gift-box">
+
+        <div class="gift-body">
+          <div class="gift-ribbon"></div>
+        </div>
+
+        <div class="gift-lid">
+          <div class="gift-ribbon"></div>
+        </div>
+
+        <div class="gift-bow">
+
+          <div class="bow-left"></div>
+          <div class="bow-right"></div>
+          <div class="bow-center"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MENSAJE -->
+
+      <p class="gift-message">
+        Las flores que te debía 💛
+      </p>
+
+    </div>
+
+
+    <!-- TEXTO DE AYUDA -->
+
+    <p class="gift-hint">
+      Tocá el regalo
     </p>
+
+  </section>
+
+
+  <div class="love-card">
+
+    <p class="love-text">
+
+      <span class="love-heart">♡</span>
+
+      Te amo mucho.
+
+      <span class="love-heart right">♡</span>
+
+    </p>
+
   </div>
 
 </section>
+
 
 <section>
 
@@ -1188,7 +2031,9 @@
 
 </section>
 
+
 <div class="section-divider">─── ♡ ───</div>
+
 
 <section>
 
@@ -1199,7 +2044,9 @@
     <div class="gallery-row row-1">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
         <div class="photo-inner">
+
           <div class="photo-front">
             <img src="foto1.jpeg" alt="">
           </div>
@@ -1207,11 +2054,16 @@
           <div class="photo-back">
             <p>Nuestro primer besito 😘</p>
           </div>
+
         </div>
+
       </div>
 
+
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
         <div class="photo-inner">
+
           <div class="photo-front">
             <img src="foto2.jpeg" alt="">
           </div>
@@ -1219,15 +2071,20 @@
           <div class="photo-back">
             <p>Siempre el goes❤️💙</p>
           </div>
+
         </div>
+
       </div>
 
     </div>
 
+
     <div class="gallery-row row-2">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
         <div class="photo-inner">
+
           <div class="photo-front">
             <img src="foto3.jpeg" alt="">
           </div>
@@ -1235,13 +2092,17 @@
           <div class="photo-back">
             <p>Una muestra de lo mucho que me aguantas</p>
           </div>
+
         </div>
+
       </div>
+
 
       <div
         class="photo-card photo4"
         onclick="this.classList.toggle('flipped')"
       >
+
         <div class="photo-inner">
 
           <div class="photo-front">
@@ -1253,13 +2114,16 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
 
+
     <div class="gallery-row row-3">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
         <div class="photo-inner">
 
           <div class="photo-front">
@@ -1271,9 +2135,12 @@
           </div>
 
         </div>
+
       </div>
 
+
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
         <div class="photo-inner">
 
           <div class="photo-front">
@@ -1285,6 +2152,7 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
@@ -1293,7 +2161,9 @@
 
 </section>
 
+
 <div class="section-divider">─── ♡ ───</div>
+
 
 <section>
 
@@ -1327,7 +2197,9 @@
 
 </section>
 
+
 <div class="section-divider">─── ♡ ───</div>
+
 
 <section>
 
@@ -1354,7 +2226,9 @@
 
 </section>
 
+
 <div class="section-divider">─── ♡ ───</div>
+
 
 <section class="final-section">
 
@@ -1372,14 +2246,20 @@
 
   </div>
 
+
   <button
     class="final-button"
     onclick="mostrarMensajeFinal()"
   >
+
     <span class="final-button-heart">♡</span>
+
     Abrir
+
     <span class="final-button-heart">♡</span>
+
   </button>
+
 
   <div
     class="final-message"
@@ -1405,9 +2285,12 @@
 
   </main>
 
+
   <script>
 
-    const START = new Date("2025-11-19T00:00:00-03:00");
+    const START =
+      new Date("2025-11-19T00:00:00-03:00");
+
 
     function updateCounter() {
 
@@ -1417,80 +2300,132 @@
         (now.getFullYear() - START.getFullYear()) * 12 +
         (now.getMonth() - START.getMonth());
 
-      let anchor = new Date(START);
+      let anchor =
+        new Date(START);
 
-      anchor.setMonth(anchor.getMonth() + months);
+      anchor.setMonth(
+        anchor.getMonth() + months
+      );
 
       if (anchor > now) {
 
         months--;
 
-        anchor = new Date(START);
-        anchor.setMonth(anchor.getMonth() + months);
+        anchor =
+          new Date(START);
+
+        anchor.setMonth(
+          anchor.getMonth() + months
+        );
+
       }
 
-      let diff = now - anchor;
+      let diff =
+        now - anchor;
 
-      const days = Math.floor(diff / 86400000);
+      const days =
+        Math.floor(diff / 86400000);
+
       diff %= 86400000;
 
-      const hours = Math.floor(diff / 3600000);
+      const hours =
+        Math.floor(diff / 3600000);
+
       diff %= 3600000;
 
-      const minutes = Math.floor(diff / 60000);
+      const minutes =
+        Math.floor(diff / 60000);
+
       diff %= 60000;
 
-      const seconds = Math.floor(diff / 1000);
+      const seconds =
+        Math.floor(diff / 1000);
 
-      document.getElementById("months").textContent = months;
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
+
+      document.getElementById("months").textContent =
+        months;
+
+      document.getElementById("days").textContent =
+        days;
+
+      document.getElementById("hours").textContent =
+        hours;
+
+      document.getElementById("minutes").textContent =
+        minutes;
+
+      document.getElementById("seconds").textContent =
+        seconds;
+
     }
 
+
     updateCounter();
-    setInterval(updateCounter, 1000);
+
+    setInterval(
+      updateCounter,
+      1000
+    );
 
 
     function ajustarProporcionesGaleria() {
 
       const filas = [
+
         {
           selector: ".row-1",
           variable: "--row1-ratio"
         },
+
         {
           selector: ".row-2",
           variable: "--row2-ratio"
         },
+
         {
           selector: ".row-3",
           variable: "--row3-ratio"
         }
+
       ];
+
 
       filas.forEach(fila => {
 
-        const row = document.querySelector(fila.selector);
-        const img = row.querySelector("img");
+        const row =
+          document.querySelector(
+            fila.selector
+          );
 
-        if (!img.naturalWidth || !img.naturalHeight) return;
+        const img =
+          row.querySelector("img");
+
+        if (
+          !img.naturalWidth ||
+          !img.naturalHeight
+        ) return;
+
 
         const ratio =
-          img.naturalWidth / img.naturalHeight;
+          img.naturalWidth /
+          img.naturalHeight;
+
 
         row.style.setProperty(
           fila.variable,
           ratio
         );
+
       });
+
     }
+
 
     window.addEventListener(
       "load",
       ajustarProporcionesGaleria
     );
+
 
     document
       .querySelectorAll(".gallery img")
@@ -1504,52 +2439,119 @@
       });
 
 
+    function abrirRegalo() {
+
+      const gift =
+        document.getElementById(
+          "flowerGift"
+        );
+
+      if (
+        gift.classList.contains("open")
+      ) return;
+
+
+      gift.classList.add("open");
+
+    }
+
+
     function lanzarConfeti() {
 
-      const emojis = ["🎉","✨","💗","🎈","⭐"];
+      const emojis = [
+        "🎉",
+        "✨",
+        "💗",
+        "🎈",
+        "⭐"
+      ];
 
-      for (let i = 0; i < 22; i++) {
 
-        const piece = document.createElement("span");
+      for (
+        let i = 0;
+        i < 22;
+        i++
+      ) {
 
-        piece.className = "confetti-piece";
+        const piece =
+          document.createElement("span");
+
+        piece.className =
+          "confetti-piece";
 
         piece.textContent =
-          emojis[Math.floor(Math.random() * emojis.length)];
+          emojis[
+            Math.floor(
+              Math.random() *
+              emojis.length
+            )
+          ];
 
         piece.style.left =
-          Math.random() * 100 + "vw";
+          Math.random() *
+          100 +
+          "vw";
 
         piece.style.animationDelay =
-          Math.random() * .35 + "s";
+          Math.random() *
+          .35 +
+          "s";
 
         piece.style.fontSize =
-          (14 + Math.random() * 14) + "px";
+          (
+            14 +
+            Math.random() * 14
+          ) +
+          "px";
 
-        document.body.appendChild(piece);
 
-        setTimeout(() => piece.remove(), 2300);
+        document.body.appendChild(
+          piece
+        );
+
+
+        setTimeout(
+          () => piece.remove(),
+          2300
+        );
+
       }
+
     }
 
 
     function mostrarMensajeFinal() {
 
       const message =
-        document.getElementById("finalMessage");
+        document.getElementById(
+          "finalMessage"
+        );
 
       const button =
-        document.querySelector(".final-button");
+        document.querySelector(
+          ".final-button"
+        );
 
-      if (message.classList.contains("show")) return;
+
+      if (
+        message.classList.contains("show")
+      ) return;
+
 
       message.classList.add("show");
 
-      button.style.opacity = "0";
-      button.style.transform = "scale(0.9)";
-      button.style.pointerEvents = "none";
+      button.style.opacity =
+        "0";
+
+      button.style.transform =
+        "scale(0.9)";
+
+      button.style.pointerEvents =
+        "none";
+
 
       lanzarSorpresaFinal();
+
 
       setTimeout(() => {
 
@@ -1559,24 +2561,39 @@
         });
 
       }, 250);
+
     }
 
 
     function cerrarMensajeFinal() {
 
       const message =
-        document.getElementById("finalMessage");
+        document.getElementById(
+          "finalMessage"
+        );
 
       const button =
-        document.querySelector(".final-button");
+        document.querySelector(
+          ".final-button"
+        );
 
-      message.classList.remove("show");
+
+      message.classList.remove(
+        "show"
+      );
+
 
       setTimeout(() => {
 
-        button.style.opacity = "1";
-        button.style.transform = "scale(1)";
-        button.style.pointerEvents = "auto";
+        button.style.opacity =
+          "1";
+
+        button.style.transform =
+          "scale(1)";
+
+        button.style.pointerEvents =
+          "auto";
+
 
         button.scrollIntoView({
           behavior: "smooth",
@@ -1584,39 +2601,81 @@
         });
 
       }, 250);
+
     }
 
 
     function lanzarSorpresaFinal() {
 
-      const emojis = ["♡","✨","💗","✦","♡","⭐"];
+      const emojis = [
+        "♡",
+        "✨",
+        "💗",
+        "✦",
+        "♡",
+        "⭐"
+      ];
 
-      for (let i = 0; i < 12; i++) {
 
-        const spark = document.createElement("span");
+      for (
+        let i = 0;
+        i < 12;
+        i++
+      ) {
 
-        spark.className = "final-spark";
+        const spark =
+          document.createElement("span");
+
+        spark.className =
+          "final-spark";
 
         spark.textContent =
-          emojis[Math.floor(Math.random() * emojis.length)];
+          emojis[
+            Math.floor(
+              Math.random() *
+              emojis.length
+            )
+          ];
+
 
         spark.style.setProperty(
           "--x",
-          (Math.random() * 260 - 130) + "px"
+          (
+            Math.random() * 260 -
+            130
+          ) +
+          "px"
         );
+
 
         spark.style.setProperty(
           "--y",
-          (Math.random() * 230 - 115) + "px"
+          (
+            Math.random() * 230 -
+            115
+          ) +
+          "px"
         );
 
+
         spark.style.animationDelay =
-          Math.random() * .25 + "s";
+          Math.random() *
+          .25 +
+          "s";
 
-        document.body.appendChild(spark);
 
-        setTimeout(() => spark.remove(), 2000);
+        document.body.appendChild(
+          spark
+        );
+
+
+        setTimeout(
+          () => spark.remove(),
+          2000
+        );
+
       }
+
     }
 
   </script>
