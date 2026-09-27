@@ -25,7 +25,10 @@
         linear-gradient(135deg, #fff8fb, #f5f5fb 48%, #edf5fa);
     }
 
-    /* LUCES SUAVES EN MOVIMIENTO */
+    /* =========================================================
+       LUCES DE FONDO EN MOVIMIENTO
+       ========================================================= */
+
     .moving-background {
       position: fixed;
       inset: 0;
@@ -36,61 +39,79 @@
 
     .moving-light {
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      filter: blur(55px);
-      opacity: .23;
-      animation: driftLight 20s ease-in-out infinite alternate;
-      will-change: transform;
+      filter: blur(60px);
+      opacity: .27;
+      animation: driftLight 15s ease-in-out infinite alternate;
+      will-change: transform, opacity;
     }
 
     .moving-light.light-1 {
-      top: -150px;
-      left: -100px;
-      background: rgba(244,190,205,.65);
-      animation-duration: 19s;
-      animation-delay: -4s;
+      top: -180px;
+      left: -140px;
+      background: rgba(244,150,180,.72);
+      animation-duration: 16s;
+      animation-delay: -3s;
     }
 
     .moving-light.light-2 {
-      top: 12%;
-      right: -160px;
-      background: rgba(145,195,225,.58);
-      animation-duration: 23s;
-      animation-delay: -10s;
+      top: 7%;
+      right: -190px;
+      background: rgba(105,175,220,.68);
+      animation-duration: 19s;
+      animation-delay: -9s;
     }
 
     .moving-light.light-3 {
-      bottom: -170px;
-      left: 18%;
-      background: rgba(220,192,228,.52);
-      animation-duration: 25s;
-      animation-delay: -15s;
+      bottom: -190px;
+      left: 12%;
+      background: rgba(195,155,220,.62);
+      animation-duration: 21s;
+      animation-delay: -13s;
     }
 
     .moving-light.light-4 {
-      bottom: 15%;
-      right: 18%;
-      background: rgba(171,207,229,.48);
-      animation-duration: 21s;
-      animation-delay: -7s;
+      bottom: 8%;
+      right: 10%;
+      background: rgba(115,190,220,.58);
+      animation-duration: 18s;
+      animation-delay: -6s;
+    }
+
+    .moving-light.light-5 {
+      top: 38%;
+      left: 35%;
+      width: 420px;
+      height: 420px;
+      background: rgba(245,180,200,.42);
+      animation-duration: 24s;
+      animation-delay: -16s;
     }
 
     @keyframes driftLight {
 
       0% {
-        transform: translate3d(-25px,-18px,0) scale(1);
+        transform:
+          translate3d(-55px,-30px,0)
+          scale(.94);
+        opacity: .21;
       }
 
       50% {
-        transform: translate3d(38px,28px,0) scale(1.09);
+        transform:
+          translate3d(65px,50px,0)
+          scale(1.10);
+        opacity: .31;
       }
 
       100% {
-        transform: translate3d(-12px,48px,0) scale(.96);
+        transform:
+          translate3d(-30px,80px,0)
+          scale(.97);
+        opacity: .25;
       }
-
     }
 
     main {
@@ -146,7 +167,7 @@
     .heart-3 { left: 10%; top: 52%; font-size: 25px; color: #4f88ad; opacity: .14; animation-delay: -4s; }
     .heart-4 { left: 91%; top: 47%; font-size: 33px; color: #d47f9b; animation-delay: -7s; }
     .heart-5 { left: 5%; top: 81%; font-size: 39px; color: #4f88ad; opacity: .15; animation-delay: -1s; }
-    .heart-6 { left: 84%; top: 82%; font-size: 28px; color: #d47f9b; opacity: .15; animation-delay: -5s; }
+    .heart-6 { left: 84%; top: 82%; font-size: 28px; color: #d47f9b; animation-delay: -5s; }
 
     @keyframes floatHeart {
       0%,100% { transform: translateY(0) rotate(-5deg); }
@@ -785,11 +806,38 @@
         padding-top: 42px;
       }
 
+      /* LUCES EN CELULAR */
       .moving-light {
-        width: 300px;
-        height: 300px;
-        filter: blur(45px);
-        opacity: .19;
+        width: 340px;
+        height: 340px;
+        filter: blur(48px);
+        opacity: .24;
+      }
+
+      .moving-light.light-1 {
+        top: -110px;
+        left: -120px;
+      }
+
+      .moving-light.light-2 {
+        top: 10%;
+        right: -130px;
+      }
+
+      .moving-light.light-3 {
+        bottom: -120px;
+        left: -40px;
+      }
+
+      .moving-light.light-4 {
+        bottom: 12%;
+        right: -40px;
+      }
+
+      .moving-light.light-5 {
+        width: 280px;
+        height: 280px;
+        left: 28%;
       }
 
       .hero {
@@ -873,17 +921,14 @@
         height: auto;
       }
 
-      /* 1 y 2: misma proporción natural */
       .gallery-row.row-1 .photo-card {
         aspect-ratio: var(--row1-ratio);
       }
 
-      /* 3 y 4: misma proporción natural */
       .gallery-row.row-2 .photo-card {
         aspect-ratio: var(--row2-ratio);
       }
 
-      /* 5 y 6: misma proporción; la 6 puede recortarse */
       .gallery-row.row-3 .photo-card {
         aspect-ratio: var(--row3-ratio);
       }
@@ -920,7 +965,6 @@
         color: #d47f9b;
       }
 
-      /* Fotos 1-4: no se recortan */
       .gallery-row.row-1 .photo-front img,
       .gallery-row.row-2 .photo-front img {
         position: relative;
@@ -931,7 +975,6 @@
         display: block;
       }
 
-      /* Fotos 5-6: se adaptan al mismo formato */
       .gallery-row.row-3 .photo-front img {
         position: relative;
         z-index: 1;
@@ -1054,11 +1097,13 @@
 
 <body>
 
+  <!-- LUCES SUAVES EN MOVIMIENTO -->
   <div class="moving-background" aria-hidden="true">
     <span class="moving-light light-1"></span>
     <span class="moving-light light-2"></span>
     <span class="moving-light light-3"></span>
     <span class="moving-light light-4"></span>
+    <span class="moving-light light-5"></span>
   </div>
 
   <div class="background-hearts" aria-hidden="true">
