@@ -25,6 +25,74 @@
         linear-gradient(135deg, #fff8fb, #f5f5fb 48%, #edf5fa);
     }
 
+    /* LUCES SUAVES EN MOVIMIENTO */
+    .moving-background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .moving-light {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(55px);
+      opacity: .23;
+      animation: driftLight 20s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .moving-light.light-1 {
+      top: -150px;
+      left: -100px;
+      background: rgba(244,190,205,.65);
+      animation-duration: 19s;
+      animation-delay: -4s;
+    }
+
+    .moving-light.light-2 {
+      top: 12%;
+      right: -160px;
+      background: rgba(145,195,225,.58);
+      animation-duration: 23s;
+      animation-delay: -10s;
+    }
+
+    .moving-light.light-3 {
+      bottom: -170px;
+      left: 18%;
+      background: rgba(220,192,228,.52);
+      animation-duration: 25s;
+      animation-delay: -15s;
+    }
+
+    .moving-light.light-4 {
+      bottom: 15%;
+      right: 18%;
+      background: rgba(171,207,229,.48);
+      animation-duration: 21s;
+      animation-delay: -7s;
+    }
+
+    @keyframes driftLight {
+
+      0% {
+        transform: translate3d(-25px,-18px,0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(38px,28px,0) scale(1.09);
+      }
+
+      100% {
+        transform: translate3d(-12px,48px,0) scale(.96);
+      }
+
+    }
+
     main {
       position: relative;
       z-index: 2;
@@ -60,7 +128,7 @@
     .background-hearts {
       position: fixed;
       inset: 0;
-      z-index: 0;
+      z-index: 1;
       pointer-events: none;
       overflow: hidden;
     }
@@ -78,7 +146,7 @@
     .heart-3 { left: 10%; top: 52%; font-size: 25px; color: #4f88ad; opacity: .14; animation-delay: -4s; }
     .heart-4 { left: 91%; top: 47%; font-size: 33px; color: #d47f9b; animation-delay: -7s; }
     .heart-5 { left: 5%; top: 81%; font-size: 39px; color: #4f88ad; opacity: .15; animation-delay: -1s; }
-    .heart-6 { left: 84%; top: 82%; font-size: 28px; color: #d47f9b; animation-delay: -5s; }
+    .heart-6 { left: 84%; top: 82%; font-size: 28px; color: #d47f9b; opacity: .15; animation-delay: -5s; }
 
     @keyframes floatHeart {
       0%,100% { transform: translateY(0) rotate(-5deg); }
@@ -717,6 +785,13 @@
         padding-top: 42px;
       }
 
+      .moving-light {
+        width: 300px;
+        height: 300px;
+        filter: blur(45px);
+        opacity: .19;
+      }
+
       .hero {
         margin-bottom: 70px;
       }
@@ -979,6 +1054,13 @@
 
 <body>
 
+  <div class="moving-background" aria-hidden="true">
+    <span class="moving-light light-1"></span>
+    <span class="moving-light light-2"></span>
+    <span class="moving-light light-3"></span>
+    <span class="moving-light light-4"></span>
+  </div>
+
   <div class="background-hearts" aria-hidden="true">
     <span class="background-heart heart-1">♡</span>
     <span class="background-heart heart-2">♡</span>
@@ -1069,7 +1151,6 @@
 
   <div class="gallery">
 
-    <!-- FILA 1: FOTO 1 + FOTO 2 -->
     <div class="gallery-row row-1">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
@@ -1098,8 +1179,6 @@
 
     </div>
 
-
-    <!-- FILA 2: FOTO 3 + FOTO 4 -->
     <div class="gallery-row row-2">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
@@ -1133,8 +1212,6 @@
 
     </div>
 
-
-    <!-- FILA 3: FOTO 5 + FOTO 6 -->
     <div class="gallery-row row-3">
 
       <div class="photo-card" onclick="this.classList.toggle('flipped')">
@@ -1331,8 +1408,6 @@
     setInterval(updateCounter, 1000);
 
 
-    /* AJUSTA AUTOMÁTICAMENTE LA PROPORCIÓN DE CADA FILA
-       SEGÚN LAS FOTOS ORIGINALES */
     function ajustarProporcionesGaleria() {
 
       const filas = [
