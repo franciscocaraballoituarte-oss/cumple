@@ -91,7 +91,6 @@
     }
 
     @keyframes driftLight {
-
       0% {
         transform:
           translate3d(-55px,-30px,0)
@@ -173,6 +172,301 @@
       0%,100% { transform: translateY(0) rotate(-5deg); }
       50% { transform: translateY(-12px) rotate(5deg); }
     }
+
+
+    /* =========================================================
+       BANDERINES DE CUMPLEAÑOS
+       ========================================================= */
+
+    .birthday-banner {
+      width: min(700px, 90%);
+      height: 62px;
+      margin: -12px auto 28px;
+      position: relative;
+      pointer-events: none;
+    }
+
+    .birthday-string {
+      position: absolute;
+      left: 2%;
+      right: 2%;
+      top: 7px;
+      height: 28px;
+      border-top: 2px solid rgba(91,122,143,.28);
+      border-radius: 50%;
+      transform: rotate(1deg);
+    }
+
+    .birthday-flags {
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      top: 9px;
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .birthday-flag {
+      width: 0;
+      height: 0;
+      border-left: 17px solid transparent;
+      border-right: 17px solid transparent;
+      border-top: 29px solid #d98ba4;
+      filter: drop-shadow(0 3px 3px rgba(72,49,61,.08));
+      transform-origin: top center;
+      animation: flagSwing 3.2s ease-in-out infinite;
+    }
+
+    .birthday-flag:nth-child(2n) {
+      border-top-color: #7da8c0;
+      animation-delay: -.8s;
+    }
+
+    .birthday-flag:nth-child(3n) {
+      border-top-color: #f0c95b;
+      animation-delay: -1.6s;
+    }
+
+    .birthday-flag:nth-child(4n) {
+      border-top-color: #b99bc9;
+      animation-delay: -2.3s;
+    }
+
+    .birthday-flag:nth-child(5n) {
+      border-top-color: #df9bb2;
+      animation-delay: -1.1s;
+    }
+
+    @keyframes flagSwing {
+      0%,100% {
+        transform: rotate(-2deg);
+      }
+
+      50% {
+        transform: rotate(3deg);
+      }
+    }
+
+
+    /* =========================================================
+       GLOBOS INTERACTIVOS
+       ========================================================= */
+
+    .birthday-balloons {
+      position: fixed;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .birthday-balloon {
+      position: absolute;
+      width: 47px;
+      height: 58px;
+      border-radius: 50% 50% 46% 46%;
+      cursor: pointer;
+      pointer-events: auto;
+      filter:
+        drop-shadow(0 7px 8px rgba(72,49,61,.12));
+      animation:
+        balloonFloat 4.8s ease-in-out infinite,
+        balloonAppear .8s ease-out both;
+      transition:
+        opacity .25s ease,
+        transform .18s ease;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .birthday-balloon::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 6px;
+      left: 50%;
+      bottom: -3px;
+      transform: translateX(-50%);
+      background: inherit;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+
+    .birthday-balloon::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 75px;
+      left: 50%;
+      top: calc(100% + 2px);
+      background: rgba(80,80,80,.28);
+      transform-origin: top center;
+    }
+
+    .birthday-balloon:hover {
+      transform: scale(1.08);
+    }
+
+    .birthday-balloon.pink {
+      background:
+        radial-gradient(
+          circle at 31% 23%,
+          rgba(255,255,255,.75) 0 7%,
+          transparent 8%
+        ),
+        linear-gradient(135deg,#f4a8bd,#d77e9b);
+    }
+
+    .birthday-balloon.blue {
+      background:
+        radial-gradient(
+          circle at 31% 23%,
+          rgba(255,255,255,.75) 0 7%,
+          transparent 8%
+        ),
+        linear-gradient(135deg,#a7d0e6,#689ab9);
+    }
+
+    .birthday-balloon.yellow {
+      background:
+        radial-gradient(
+          circle at 31% 23%,
+          rgba(255,255,255,.78) 0 7%,
+          transparent 8%
+        ),
+        linear-gradient(135deg,#ffe995,#e8c04c);
+    }
+
+    .birthday-balloon.lilac {
+      background:
+        radial-gradient(
+          circle at 31% 23%,
+          rgba(255,255,255,.75) 0 7%,
+          transparent 8%
+        ),
+        linear-gradient(135deg,#d4b8df,#a889bd);
+    }
+
+    .balloon-1 {
+      left: 3.5%;
+      top: 24%;
+      animation-delay: -.8s, 0s;
+    }
+
+    .balloon-2 {
+      right: 4%;
+      top: 36%;
+      animation-delay: -2.1s, .15s;
+    }
+
+    .balloon-3 {
+      left: 2.5%;
+      top: 63%;
+      animation-delay: -3.3s, .3s;
+    }
+
+    .balloon-4 {
+      right: 3%;
+      top: 72%;
+      animation-delay: -1.4s, .45s;
+    }
+
+    .balloon-5 {
+      left: 6%;
+      top: 87%;
+      animation-delay: -2.7s, .6s;
+    }
+
+    .balloon-6 {
+      right: 7%;
+      top: 15%;
+      animation-delay: -3.8s, .75s;
+    }
+
+    .birthday-balloon.exploding {
+      pointer-events: none;
+      animation: balloonPop .28s ease-out forwards;
+    }
+
+    @keyframes balloonFloat {
+      0%,100% {
+        margin-top: 0;
+        rotate: -3deg;
+      }
+
+      50% {
+        margin-top: -13px;
+        rotate: 3deg;
+      }
+    }
+
+    @keyframes balloonAppear {
+      from {
+        opacity: 0;
+        transform: scale(.2);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes balloonPop {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      45% {
+        opacity: 1;
+        transform: scale(1.18);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(.05);
+      }
+    }
+
+    .balloon-particle {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      font-size: 17px;
+      animation: balloonParticle .9s cubic-bezier(.15,.75,.25,1) forwards;
+    }
+
+    @keyframes balloonParticle {
+      0% {
+        opacity: 0;
+        transform:
+          translate(-50%,-50%)
+          scale(.25)
+          rotate(0deg);
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform:
+          translate(
+            calc(-50% + var(--x)),
+            calc(-50% + var(--y))
+          )
+          scale(.85)
+          rotate(var(--rotate));
+      }
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero {
       padding-top: 8px;
@@ -351,8 +645,6 @@
       opacity: 1;
     }
 
-    /* FLORES */
-
     .gift-flowers {
       position: absolute;
       left: 50%;
@@ -385,8 +677,6 @@
     .flower-gift.open .gift-flower {
       opacity: 1;
     }
-
-    /* Flores más juntas */
 
     .gift-flower:nth-child(1) {
       margin-left: -100px;
@@ -528,37 +818,14 @@
         inset 0 1px 2px rgba(255,255,255,.45);
     }
 
-    .petal:nth-child(1) {
-      transform: rotate(0deg) translateY(-2px);
-    }
-
-    .petal:nth-child(2) {
-      transform: rotate(45deg) translateY(-2px);
-    }
-
-    .petal:nth-child(3) {
-      transform: rotate(90deg) translateY(-2px);
-    }
-
-    .petal:nth-child(4) {
-      transform: rotate(135deg) translateY(-2px);
-    }
-
-    .petal:nth-child(5) {
-      transform: rotate(180deg) translateY(-2px);
-    }
-
-    .petal:nth-child(6) {
-      transform: rotate(225deg) translateY(-2px);
-    }
-
-    .petal:nth-child(7) {
-      transform: rotate(270deg) translateY(-2px);
-    }
-
-    .petal:nth-child(8) {
-      transform: rotate(315deg) translateY(-2px);
-    }
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-2px); }
+    .petal:nth-child(2) { transform: rotate(45deg) translateY(-2px); }
+    .petal:nth-child(3) { transform: rotate(90deg) translateY(-2px); }
+    .petal:nth-child(4) { transform: rotate(135deg) translateY(-2px); }
+    .petal:nth-child(5) { transform: rotate(180deg) translateY(-2px); }
+    .petal:nth-child(6) { transform: rotate(225deg) translateY(-2px); }
+    .petal:nth-child(7) { transform: rotate(270deg) translateY(-2px); }
+    .petal:nth-child(8) { transform: rotate(315deg) translateY(-2px); }
 
     .flower-center {
       position: absolute;
@@ -579,6 +846,7 @@
         0 2px 5px rgba(150,105,15,.20);
     }
 
+
     /* =========================================================
        CAJA DEL REGALO
        ========================================================= */
@@ -592,11 +860,6 @@
       height: 180px;
       transform: translateX(-50%);
       filter: drop-shadow(0 15px 18px rgba(72,49,61,.18));
-
-      /*
-        Primero deja que se vea la apertura.
-        Después baja y desaparece.
-      */
       transition:
         transform 1s cubic-bezier(.25,.75,.3,1) .55s,
         opacity .65s ease 1.05s,
@@ -700,8 +963,6 @@
       background: #e4b53e;
     }
 
-    /* TAPA SE ABRE */
-
     .flower-gift.open .gift-lid {
       top: -72px;
       transform: rotate(-14deg) translateX(-8px);
@@ -714,8 +975,6 @@
         rotate(-14deg);
     }
 
-    /* CAJA SE VA HACIA ABAJO Y DESAPARECE */
-
     .flower-gift.open .gift-box {
       transform:
         translateX(-50%)
@@ -725,6 +984,7 @@
       filter:
         drop-shadow(0 8px 8px rgba(72,49,61,0));
     }
+
 
     /* =========================================================
        BRILLITOS DEL REGALO
@@ -769,7 +1029,6 @@
     }
 
     @keyframes giftSpark {
-
       0% {
         opacity: 0;
         transform: scale(.3) rotate(0);
@@ -788,6 +1047,7 @@
           translateY(-15px);
       }
     }
+
 
     /* =========================================================
        MENSAJE DE LAS FLORES
@@ -821,8 +1081,6 @@
         translateX(-50%)
         translateY(0);
     }
-
-    /* TEXTO DE AYUDA */
 
     .gift-hint {
       width: 100%;
@@ -943,7 +1201,10 @@
       opacity: .78;
     }
 
-    /* GALERÍA */
+
+    /* =========================================================
+       GALERÍA
+       ========================================================= */
 
     .gallery {
       display: flex;
@@ -1022,6 +1283,11 @@
       color: #4c7188;
     }
 
+
+    /* =========================================================
+       PLANES
+       ========================================================= */
+
     .plans-box {
       width: min(680px,100%);
       margin: 0 auto;
@@ -1076,6 +1342,11 @@
       margin-top: 0;
     }
 
+
+    /* =========================================================
+       ORIGEN
+       ========================================================= */
+
     .origin-card {
       width: min(720px,100%);
       margin: 0 auto;
@@ -1113,6 +1384,11 @@
       border: 1px solid rgba(70,130,170,.15);
       box-shadow: 0 5px 18px rgba(72,49,61,.05);
     }
+
+
+    /* =========================================================
+       FINAL
+       ========================================================= */
 
     .final-section {
       margin-top: 10px;
@@ -1279,6 +1555,11 @@
       text-shadow: 0 3px 12px rgba(208,120,150,.16);
     }
 
+
+    /* =========================================================
+       EFECTOS FINALES Y CONFETI
+       ========================================================= */
+
     .final-spark {
       position: fixed;
       z-index: 9999;
@@ -1332,14 +1613,17 @@
       }
     }
 
+
+    /* =========================================================
+       CELULAR
+       ========================================================= */
+
     @media (max-width:600px) {
 
       main {
         width: min(92%,500px);
         padding-top: 42px;
       }
-
-      /* LUCES EN CELULAR */
 
       .moving-light {
         width: 340px;
@@ -1373,6 +1657,69 @@
         height: 280px;
         left: 28%;
       }
+
+
+      /* BANDERINES */
+
+      .birthday-banner {
+        width: 96%;
+        height: 50px;
+        margin: -8px auto 24px;
+      }
+
+      .birthday-string {
+        top: 5px;
+      }
+
+      .birthday-flags {
+        top: 7px;
+        left: 3%;
+        right: 3%;
+      }
+
+      .birthday-flag {
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-top-width: 22px;
+      }
+
+
+      /* GLOBOS */
+
+      .birthday-balloon {
+        width: 37px;
+        height: 47px;
+      }
+
+      .birthday-balloon::after {
+        height: 55px;
+      }
+
+      .balloon-1 {
+        left: 1.5%;
+        top: 28%;
+      }
+
+      .balloon-2 {
+        right: 1.5%;
+        top: 43%;
+      }
+
+      .balloon-3 {
+        left: 1%;
+        top: 67%;
+      }
+
+      .balloon-4 {
+        right: 1%;
+        top: 78%;
+      }
+
+      .balloon-5,
+      .balloon-6 {
+        display: none;
+      }
+
 
       .hero {
         margin-bottom: 70px;
@@ -1540,7 +1887,8 @@
         letter-spacing: .2px;
       }
 
-      /* GALERÍA EN CELULAR */
+
+      /* GALERÍA */
 
       .gallery {
         display: flex;
@@ -1728,6 +2076,11 @@
       .gallery-row {
         gap: 11px;
       }
+
+      .birthday-balloon {
+        width: 34px;
+        height: 43px;
+      }
     }
   </style>
 
@@ -1745,6 +2098,7 @@
     <span class="moving-light light-5"></span>
   </div>
 
+
   <div class="background-hearts" aria-hidden="true">
     <span class="background-heart heart-1">♡</span>
     <span class="background-heart heart-2">♡</span>
@@ -1754,188 +2108,460 @@
     <span class="background-heart heart-6">♡</span>
   </div>
 
+
+  <!-- GLOBOS INTERACTIVOS -->
+
+  <div class="birthday-balloons" aria-hidden="true">
+
+    <span class="birthday-balloon pink balloon-1"
+      onclick="explotarGlobo(this, event)"></span>
+
+    <span class="birthday-balloon blue balloon-2"
+      onclick="explotarGlobo(this, event)"></span>
+
+    <span class="birthday-balloon yellow balloon-3"
+      onclick="explotarGlobo(this, event)"></span>
+
+    <span class="birthday-balloon lilac balloon-4"
+      onclick="explotarGlobo(this, event)"></span>
+
+    <span class="birthday-balloon pink balloon-5"
+      onclick="explotarGlobo(this, event)"></span>
+
+    <span class="birthday-balloon blue balloon-6"
+      onclick="explotarGlobo(this, event)"></span>
+
+  </div>
+
+
   <main>
 
-<section class="hero">
+    <section class="hero">
 
-  <div class="hero-title">
-    <span class="title-decoration left">✦</span>
-    <span class="title-decoration extra-left">♡</span>
+      <div class="hero-title">
 
-    <h1>Feliz cumple</h1>
+        <span class="title-decoration left">✦</span>
+        <span class="title-decoration extra-left">♡</span>
 
-    <span class="title-decoration right">♡</span>
-    <span class="title-decoration extra-right">✦</span>
-  </div>
+        <h1>Feliz cumple</h1>
 
-  <img
-    class="main-photo"
-    src="foto-principal.jpeg"
-    alt=""
-  >
+        <span class="title-decoration right">♡</span>
+        <span class="title-decoration extra-right">✦</span>
 
-  <div class="love-card">
-
-    <p class="love-text">
-
-      <span class="love-heart">♡</span>
-
-      Te amo mucho.
-
-      <span class="love-heart right">♡</span>
-
-    </p>
-
-  </div>
-
-  <button
-    class="confetti-btn"
-    onclick="lanzarConfeti()"
-    aria-label="Celebrar"
-  >
-    🎉
-  </button>
+      </div>
 
 
-  <!-- REGALO CON FLORES -->
+      <!-- BANDERINES -->
 
-  <section class="flower-gift-section">
+      <div class="birthday-banner" aria-hidden="true">
 
-    <div
-      class="flower-gift"
-      id="flowerGift"
-      onclick="abrirRegalo()"
-      role="button"
-      tabindex="0"
-      aria-label="Abrir regalo"
-    >
+        <div class="birthday-string"></div>
 
-      <div class="gift-flowers">
+        <div class="birthday-flags">
 
-        <!-- FLOR 1 -->
-        <div class="gift-flower">
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
+          <span class="birthday-flag"></span>
 
-          <div class="flower-stem"></div>
+        </div>
 
-          <div class="flower-leaf left"></div>
-          <div class="flower-leaf right"></div>
+      </div>
 
-          <div class="flower-head">
 
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
+      <img
+        class="main-photo"
+        src="foto-principal.jpeg"
+        alt=""
+      >
 
-            <span class="flower-center"></span>
+
+      <div class="love-card">
+
+        <p class="love-text">
+
+          <span class="love-heart">♡</span>
+
+          Te amo mucho.
+
+          <span class="love-heart right">♡</span>
+
+        </p>
+
+      </div>
+
+
+      <button
+        class="confetti-btn"
+        onclick="lanzarConfeti()"
+        aria-label="Celebrar"
+      >
+        🎉
+      </button>
+
+
+      <!-- REGALO CON FLORES -->
+
+      <section class="flower-gift-section">
+
+        <div
+          class="flower-gift"
+          id="flowerGift"
+          onclick="abrirRegalo()"
+          role="button"
+          tabindex="0"
+          aria-label="Abrir regalo"
+        >
+
+          <div class="gift-flowers">
+
+            <!-- FLOR 1 -->
+
+            <div class="gift-flower">
+
+              <div class="flower-stem"></div>
+
+              <div class="flower-leaf left"></div>
+              <div class="flower-leaf right"></div>
+
+              <div class="flower-head">
+
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+
+                <span class="flower-center"></span>
+
+              </div>
+
+            </div>
+
+
+            <!-- FLOR 2 -->
+
+            <div class="gift-flower">
+
+              <div class="flower-stem"></div>
+
+              <div class="flower-leaf left"></div>
+              <div class="flower-leaf right"></div>
+
+              <div class="flower-head">
+
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+
+                <span class="flower-center"></span>
+
+              </div>
+
+            </div>
+
+
+            <!-- FLOR 3 -->
+
+            <div class="gift-flower">
+
+              <div class="flower-stem"></div>
+
+              <div class="flower-leaf left"></div>
+              <div class="flower-leaf right"></div>
+
+              <div class="flower-head">
+
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+
+                <span class="flower-center"></span>
+
+              </div>
+
+            </div>
+
+
+            <!-- FLOR 4 -->
+
+            <div class="gift-flower">
+
+              <div class="flower-stem"></div>
+
+              <div class="flower-leaf left"></div>
+              <div class="flower-leaf right"></div>
+
+              <div class="flower-head">
+
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+
+                <span class="flower-center"></span>
+
+              </div>
+
+            </div>
+
+
+            <!-- FLOR 5 -->
+
+            <div class="gift-flower">
+
+              <div class="flower-stem"></div>
+
+              <div class="flower-leaf left"></div>
+              <div class="flower-leaf right"></div>
+
+              <div class="flower-head">
+
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+                <span class="petal"></span>
+
+                <span class="flower-center"></span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- BRILLITOS -->
+
+          <span class="gift-spark">✦</span>
+          <span class="gift-spark">✦</span>
+          <span class="gift-spark">✦</span>
+          <span class="gift-spark">✦</span>
+
+
+          <!-- CAJA -->
+
+          <div class="gift-box">
+
+            <div class="gift-body">
+              <div class="gift-ribbon"></div>
+            </div>
+
+            <div class="gift-lid">
+              <div class="gift-ribbon"></div>
+            </div>
+
+            <div class="gift-bow">
+
+              <div class="bow-left"></div>
+              <div class="bow-right"></div>
+              <div class="bow-center"></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MENSAJE -->
+
+          <p class="gift-message">
+            Las flores que te debía 💛
+          </p>
+
+        </div>
+
+
+        <p class="gift-hint">
+          Tocá el regalo
+        </p>
+
+      </section>
+
+    </section>
+
+
+    <section>
+
+      <h2>Tiempo Juntos</h2>
+
+      <div class="counter-box">
+
+        <div>
+          <span class="counter-number" id="months">0</span>
+          <span class="counter-label">meses</span>
+        </div>
+
+        <div>
+          <span class="counter-number" id="days">0</span>
+          <span class="counter-label">días</span>
+        </div>
+
+        <div>
+          <span class="counter-number" id="hours">0</span>
+          <span class="counter-label">horas</span>
+        </div>
+
+        <div>
+          <span class="counter-number" id="minutes">0</span>
+          <span class="counter-label">minutos</span>
+        </div>
+
+        <div>
+          <span class="counter-number" id="seconds">0</span>
+          <span class="counter-label">segundos</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="section-divider">─── ♡ ───</div>
+
+
+    <section>
+
+      <h2 style="margin-top: 150px;">Algunos recuerdos ❤️</h2>
+
+      <div class="gallery">
+
+        <div class="gallery-row row-1">
+
+          <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
+            <div class="photo-inner">
+
+              <div class="photo-front">
+                <img src="foto1.jpeg" alt="">
+              </div>
+
+              <div class="photo-back">
+                <p>Nuestro primer besito 😘</p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="photo-card" onclick="this.classList.toggle('flipped')">
+
+            <div class="photo-inner">
+
+              <div class="photo-front">
+                <img src="foto2.jpeg" alt="">
+              </div>
+
+              <div class="photo-back">
+                <p>Siempre el goes❤️💙</p>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
 
-        <!-- FLOR 2 -->
-        <div class="gift-flower">
+        <div class="gallery-row row-2">
 
-          <div class="flower-stem"></div>
+          <div class="photo-card" onclick="this.classList.toggle('flipped')">
 
-          <div class="flower-leaf left"></div>
-          <div class="flower-leaf right"></div>
+            <div class="photo-inner">
 
-          <div class="flower-head">
+              <div class="photo-front">
+                <img src="foto3.jpeg" alt="">
+              </div>
 
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
+              <div class="photo-back">
+                <p>Una muestra de lo mucho que me aguantas</p>
+              </div>
 
-            <span class="flower-center"></span>
+            </div>
+
+          </div>
+
+
+          <div
+            class="photo-card photo4"
+            onclick="this.classList.toggle('flipped')"
+          >
+
+            <div class="photo-inner">
+
+              <div class="photo-front">
+                <img src="foto4.jpeg" alt="">
+              </div>
+
+              <div class="photo-back">
+                <p>Por muchas más siestas juntitos ❤️</p>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
 
-        <!-- FLOR 3 -->
-        <div class="gift-flower">
+        <div class="gallery-row row-3">
 
-          <div class="flower-stem"></div>
+          <div class="photo-card" onclick="this.classList.toggle('flipped')">
 
-          <div class="flower-leaf left"></div>
-          <div class="flower-leaf right"></div>
+            <div class="photo-inner">
 
-          <div class="flower-head">
+              <div class="photo-front">
+                <img src="foto5.jpeg" alt="">
+              </div>
 
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
+              <div class="photo-back">
+                <p>El día que te pedí (estaba pelado)</p>
+              </div>
 
-            <span class="flower-center"></span>
+            </div>
 
           </div>
 
-        </div>
 
+          <div class="photo-card" onclick="this.classList.toggle('flipped')">
 
-        <!-- FLOR 4 -->
-        <div class="gift-flower">
+            <div class="photo-inner">
 
-          <div class="flower-stem"></div>
+              <div class="photo-front">
+                <img src="foto6.jpeg" alt="">
+              </div>
 
-          <div class="flower-leaf left"></div>
-          <div class="flower-leaf right"></div>
+              <div class="photo-back">
+                <p>Quiero otro verano contigo</p>
+              </div>
 
-          <div class="flower-head">
-
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-
-            <span class="flower-center"></span>
-
-          </div>
-
-        </div>
-
-
-        <!-- FLOR 5 -->
-        <div class="gift-flower">
-
-          <div class="flower-stem"></div>
-
-          <div class="flower-leaf left"></div>
-          <div class="flower-leaf right"></div>
-
-          <div class="flower-head">
-
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-            <span class="petal"></span>
-
-            <span class="flower-center"></span>
+            </div>
 
           </div>
 
@@ -1943,349 +2569,138 @@
 
       </div>
 
-
-      <!-- BRILLITOS -->
-
-      <span class="gift-spark">✦</span>
-      <span class="gift-spark">✦</span>
-      <span class="gift-spark">✦</span>
-      <span class="gift-spark">✦</span>
+    </section>
 
 
-      <!-- CAJA -->
-
-      <div class="gift-box">
-
-        <div class="gift-body">
-          <div class="gift-ribbon"></div>
-        </div>
-
-        <div class="gift-lid">
-          <div class="gift-ribbon"></div>
-        </div>
-
-        <div class="gift-bow">
-
-          <div class="bow-left"></div>
-          <div class="bow-right"></div>
-          <div class="bow-center"></div>
-
-        </div>
-
-      </div>
+    <div class="section-divider">─── ♡ ───</div>
 
 
-      <!-- MENSAJE -->
+    <section>
 
-      <p class="gift-message">
-        Las flores que te debía 💛
-      </p>
+      <div class="plans-box">
 
-    </div>
+        <h2 class="plans-title">
+          Cosas que nos quedan por hacer
+        </h2>
 
+        <div class="plans-items">
 
-    <!-- TEXTO DE AYUDA -->
-
-    <p class="gift-hint">
-      Tocá el regalo
-    </p>
-
-  </section>
-
-</section>
-
-
-<section>
-
-  <h2>Tiempo Juntos</h2>
-
-  <div class="counter-box">
-
-    <div>
-      <span class="counter-number" id="months">0</span>
-      <span class="counter-label">meses</span>
-    </div>
-
-    <div>
-      <span class="counter-number" id="days">0</span>
-      <span class="counter-label">días</span>
-    </div>
-
-    <div>
-      <span class="counter-number" id="hours">0</span>
-      <span class="counter-label">horas</span>
-    </div>
-
-    <div>
-      <span class="counter-number" id="minutes">0</span>
-      <span class="counter-label">minutos</span>
-    </div>
-
-    <div>
-      <span class="counter-number" id="seconds">0</span>
-      <span class="counter-label">segundos</span>
-    </div>
-
-  </div>
-
-</section>
-
-
-<div class="section-divider">─── ♡ ───</div>
-
-
-<section>
-
-  <h2 style="margin-top: 150px;">Algunos recuerdos ❤️</h2>
-
-  <div class="gallery">
-
-    <div class="gallery-row row-1">
-
-      <div class="photo-card" onclick="this.classList.toggle('flipped')">
-
-        <div class="photo-inner">
-
-          <div class="photo-front">
-            <img src="foto1.jpeg" alt="">
+          <div class="plan-item">
+            Dormir juntos
           </div>
 
-          <div class="photo-back">
-            <p>Nuestro primer besito 😘</p>
+          <div class="plan-item">
+            Comer más hamburguesitas
+          </div>
+
+          <div class="plan-item">
+            Correr de todos los pichis para que no te de la locura
+          </div>
+
+          <div class="plan-item">
+            Irnos a vivir juntos a la casa de Lugano
           </div>
 
         </div>
 
       </div>
 
+    </section>
 
-      <div class="photo-card" onclick="this.classList.toggle('flipped')">
 
-        <div class="photo-inner">
+    <div class="section-divider">─── ♡ ───</div>
 
-          <div class="photo-front">
-            <img src="foto2.jpeg" alt="">
-          </div>
 
-          <div class="photo-back">
-            <p>Siempre el goes❤️💙</p>
-          </div>
+    <section>
+
+      <div class="origin-card">
+
+        <h2>El día que empezamos a hablar</h2>
+
+        <div class="origin-date">
+          30 de agosto de 2024
+        </div>
+
+        <div class="origin-text">
+
+          <p>
+            Me acuerdo como si fuera hoy, estaba re nervioso esperando que me
+            lleguen tus mensajes y no sabía como hablarte. Pero no se que sería
+            de mi ahora si no te hubiese votado ese foto chat, porque hasta hoy sonrío
+            cuando me llega un mensaje tuyo como si fuera ese día.
+          </p>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
 
-    <div class="gallery-row row-2">
+    <div class="section-divider">─── ♡ ───</div>
 
-      <div class="photo-card" onclick="this.classList.toggle('flipped')">
 
-        <div class="photo-inner">
+    <section class="final-section">
 
-          <div class="photo-front">
-            <img src="foto3.jpeg" alt="">
-          </div>
+      <div class="final-card">
 
-          <div class="photo-back">
-            <p>Una muestra de lo mucho que me aguantas</p>
-          </div>
+        <img
+          class="final-photo"
+          src="foto-final.jpeg"
+          alt=""
+        >
 
+        <div class="final-decoration">
+          ─── ✦ ───
         </div>
 
       </div>
+
+
+      <button
+        class="final-button"
+        onclick="mostrarMensajeFinal()"
+      >
+
+        <span class="final-button-heart">♡</span>
+
+        Abrir
+
+        <span class="final-button-heart">♡</span>
+
+      </button>
 
 
       <div
-        class="photo-card photo4"
-        onclick="this.classList.toggle('flipped')"
+        class="final-message"
+        id="finalMessage"
+        onclick="cerrarMensajeFinal()"
       >
 
-        <div class="photo-inner">
+        <p class="final-thanks">
+          Gracias por hacerme la persona más feliz del mundo.
+        </p>
 
-          <div class="photo-front">
-            <img src="foto4.jpeg" alt="">
-          </div>
+        <p class="final-day">
+          Pasala muy lindo en tu día.
+        </p>
 
-          <div class="photo-back">
-            <p>Por muchas más siestas juntitos ❤️</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="gallery-row row-3">
-
-      <div class="photo-card" onclick="this.classList.toggle('flipped')">
-
-        <div class="photo-inner">
-
-          <div class="photo-front">
-            <img src="foto5.jpeg" alt="">
-          </div>
-
-          <div class="photo-back">
-            <p>El día que te pedí (estaba pelado)</p>
-          </div>
-
-        </div>
+        <p class="final-love">
+          Te amo infinitamente ❤️
+        </p>
 
       </div>
 
-
-      <div class="photo-card" onclick="this.classList.toggle('flipped')">
-
-        <div class="photo-inner">
-
-          <div class="photo-front">
-            <img src="foto6.jpeg" alt="">
-          </div>
-
-          <div class="photo-back">
-            <p>Quiero otro verano contigo</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<div class="section-divider">─── ♡ ───</div>
-
-
-<section>
-
-  <div class="plans-box">
-
-    <h2 class="plans-title">
-      Cosas que nos quedan por hacer
-    </h2>
-
-    <div class="plans-items">
-
-      <div class="plan-item">
-        Dormir juntos
-      </div>
-
-      <div class="plan-item">
-        Comer más hamburguesitas
-      </div>
-
-      <div class="plan-item">
-        Correr de todos los pichis para que no te de la locura
-      </div>
-
-      <div class="plan-item">
-        Irnos a vivir juntos a la casa de Lugano
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<div class="section-divider">─── ♡ ───</div>
-
-
-<section>
-
-  <div class="origin-card">
-
-    <h2>El día que empezamos a hablar</h2>
-
-    <div class="origin-date">
-      30 de agosto de 2024
-    </div>
-
-    <div class="origin-text">
-
-      <p>
-        Me acuerdo como si fuera hoy, estaba re nervioso esperando que me
-        lleguen tus mensajes y no sabía como hablarte. Pero no se que sería
-        de mi ahora si no te hubiese votado ese foto chat, porque hasta hoy sonrío
-        cuando me llega un mensaje tuyo como si fuera ese día.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<div class="section-divider">─── ♡ ───</div>
-
-
-<section class="final-section">
-
-  <div class="final-card">
-
-    <img
-      class="final-photo"
-      src="foto-final.jpeg"
-      alt=""
-    >
-
-    <div class="final-decoration">
-      ─── ✦ ───
-    </div>
-
-  </div>
-
-
-  <button
-    class="final-button"
-    onclick="mostrarMensajeFinal()"
-  >
-
-    <span class="final-button-heart">♡</span>
-
-    Abrir
-
-    <span class="final-button-heart">♡</span>
-
-  </button>
-
-
-  <div
-    class="final-message"
-    id="finalMessage"
-    onclick="cerrarMensajeFinal()"
-  >
-
-    <p class="final-thanks">
-      Gracias por hacerme la persona más feliz del mundo.
-    </p>
-
-    <p class="final-day">
-      Pasala muy lindo en tu día.
-    </p>
-
-    <p class="final-love">
-      Te amo infinitamente ❤️
-    </p>
-
-  </div>
-
-</section>
+    </section>
 
   </main>
 
 
   <script>
+
+    /* =========================================================
+       CONTADOR
+       ========================================================= */
 
     const START =
       new Date("2025-11-19T00:00:00-03:00");
@@ -2367,6 +2782,10 @@
     );
 
 
+    /* =========================================================
+       PROPORCIONES DE LA GALERÍA
+       ========================================================= */
+
     function ajustarProporcionesGaleria() {
 
       const filas = [
@@ -2438,6 +2857,10 @@
       });
 
 
+    /* =========================================================
+       REGALO
+       ========================================================= */
+
     function abrirRegalo() {
 
       const gift =
@@ -2454,6 +2877,10 @@
 
     }
 
+
+    /* =========================================================
+       CONFETI DEL BOTÓN
+       ========================================================= */
 
     function lanzarConfeti() {
 
@@ -2518,6 +2945,149 @@
 
     }
 
+
+    /* =========================================================
+       EXPLOSIÓN DE GLOBOS
+       ========================================================= */
+
+    function explotarGlobo(balloon, event) {
+
+      if (
+        balloon.classList.contains("exploding")
+      ) return;
+
+
+      const rect =
+        balloon.getBoundingClientRect();
+
+      const centerX =
+        rect.left +
+        rect.width / 2;
+
+      const centerY =
+        rect.top +
+        rect.height / 2;
+
+
+      balloon.classList.add("exploding");
+
+
+      const efectos = [
+        "✨",
+        "✦",
+        "♡",
+        "💗",
+        "🎉",
+        "⭐",
+        "·"
+      ];
+
+
+      const cantidad =
+        window.innerWidth <= 600
+          ? 12
+          : 16;
+
+
+      for (
+        let i = 0;
+        i < cantidad;
+        i++
+      ) {
+
+        const particle =
+          document.createElement("span");
+
+        particle.className =
+          "balloon-particle";
+
+        particle.textContent =
+          efectos[
+            Math.floor(
+              Math.random() *
+              efectos.length
+            )
+          ];
+
+
+        particle.style.left =
+          centerX + "px";
+
+        particle.style.top =
+          centerY + "px";
+
+
+        const angle =
+          Math.random() *
+          Math.PI *
+          2;
+
+        const distance =
+          45 +
+          Math.random() * 80;
+
+
+        particle.style.setProperty(
+          "--x",
+          Math.cos(angle) *
+            distance +
+            "px"
+        );
+
+        particle.style.setProperty(
+          "--y",
+          Math.sin(angle) *
+            distance +
+            "px"
+        );
+
+        particle.style.setProperty(
+          "--rotate",
+          (
+            Math.random() *
+            360 -
+            180
+          ) +
+          "deg"
+        );
+
+        particle.style.fontSize =
+          (
+            11 +
+            Math.random() * 11
+          ) +
+          "px";
+
+        particle.style.animationDelay =
+          Math.random() *
+          .08 +
+          "s";
+
+
+        document.body.appendChild(
+          particle
+        );
+
+
+        setTimeout(
+          () => particle.remove(),
+          1100
+        );
+
+      }
+
+
+      setTimeout(
+        () => balloon.remove(),
+        300
+      );
+
+    }
+
+
+    /* =========================================================
+       MENSAJE FINAL
+       ========================================================= */
 
     function mostrarMensajeFinal() {
 
@@ -2603,6 +3173,10 @@
 
     }
 
+
+    /* =========================================================
+       SORPRESA FINAL
+       ========================================================= */
 
     function lanzarSorpresaFinal() {
 
