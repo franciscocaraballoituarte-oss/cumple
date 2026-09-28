@@ -255,11 +255,12 @@
        ========================================================= */
 
     .birthday-balloons {
-      position: fixed;
-      inset: 0;
-      z-index: 4;
+      position: relative;
+      width: min(520px, 100%);
+      height: 210px;
+      margin: 5px auto 90px;
       pointer-events: none;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .birthday-balloon {
@@ -348,39 +349,44 @@
         linear-gradient(135deg,#d4b8df,#a889bd);
     }
 
+    /*
+       Posiciones dentro de la zona de globos.
+       No dependen del scroll ni de toda la pantalla.
+    */
+
     .balloon-1 {
-      left: 3.5%;
-      top: 24%;
+      left: 7%;
+      top: 22%;
       animation-delay: -.8s, 0s;
     }
 
     .balloon-2 {
-      right: 4%;
-      top: 36%;
+      left: 30%;
+      top: 4%;
       animation-delay: -2.1s, .15s;
     }
 
     .balloon-3 {
-      left: 2.5%;
-      top: 63%;
+      left: 52%;
+      top: 28%;
       animation-delay: -3.3s, .3s;
     }
 
     .balloon-4 {
-      right: 3%;
-      top: 72%;
+      right: 7%;
+      top: 9%;
       animation-delay: -1.4s, .45s;
     }
 
     .balloon-5 {
-      left: 6%;
-      top: 87%;
+      left: 25%;
+      top: 57%;
       animation-delay: -2.7s, .6s;
     }
 
     .balloon-6 {
-      right: 7%;
-      top: 15%;
+      right: 24%;
+      top: 59%;
       animation-delay: -3.8s, .75s;
     }
 
@@ -611,7 +617,7 @@
        ========================================================= */
 
     .flower-gift-section {
-      margin: 38px auto 170px;
+      margin: 38px auto 80px;
       text-align: center;
     }
 
@@ -1686,38 +1692,49 @@
 
       /* GLOBOS */
 
+      .birthday-balloons {
+        width: 100%;
+        height: 185px;
+        margin: 0 auto 75px;
+      }
+
       .birthday-balloon {
         width: 37px;
         height: 47px;
       }
 
       .birthday-balloon::after {
-        height: 55px;
+        height: 48px;
       }
 
       .balloon-1 {
-        left: 1.5%;
-        top: 28%;
+        left: 4%;
+        top: 27%;
       }
 
       .balloon-2 {
-        right: 1.5%;
-        top: 43%;
+        left: 25%;
+        top: 3%;
       }
 
       .balloon-3 {
-        left: 1%;
-        top: 67%;
+        left: 47%;
+        top: 30%;
       }
 
       .balloon-4 {
-        right: 1%;
-        top: 78%;
+        right: 5%;
+        top: 7%;
       }
 
-      .balloon-5,
+      .balloon-5 {
+        left: 22%;
+        top: 59%;
+      }
+
       .balloon-6 {
-        display: none;
+        right: 22%;
+        top: 62%;
       }
 
 
@@ -1767,6 +1784,7 @@
 
       .flower-gift-section {
         margin-top: 30px;
+        margin-bottom: 45px;
       }
 
       .flower-gift {
@@ -2081,6 +2099,10 @@
         width: 34px;
         height: 43px;
       }
+
+      .birthday-balloons {
+        height: 175px;
+      }
     }
   </style>
 
@@ -2106,31 +2128,6 @@
     <span class="background-heart heart-4">♡</span>
     <span class="background-heart heart-5">♡</span>
     <span class="background-heart heart-6">♡</span>
-  </div>
-
-
-  <!-- GLOBOS INTERACTIVOS -->
-
-  <div class="birthday-balloons" aria-hidden="true">
-
-    <span class="birthday-balloon pink balloon-1"
-      onclick="explotarGlobo(this, event)"></span>
-
-    <span class="birthday-balloon blue balloon-2"
-      onclick="explotarGlobo(this, event)"></span>
-
-    <span class="birthday-balloon yellow balloon-3"
-      onclick="explotarGlobo(this, event)"></span>
-
-    <span class="birthday-balloon lilac balloon-4"
-      onclick="explotarGlobo(this, event)"></span>
-
-    <span class="birthday-balloon pink balloon-5"
-      onclick="explotarGlobo(this, event)"></span>
-
-    <span class="birthday-balloon blue balloon-6"
-      onclick="explotarGlobo(this, event)"></span>
-
   </div>
 
 
@@ -2403,6 +2400,45 @@
 
       </section>
 
+
+      <!-- =====================================================
+           GLOBOS DE CUMPLEAÑOS
+           ===================================================== -->
+
+      <div class="birthday-balloons" aria-label="Globos de cumpleaños">
+
+        <span
+          class="birthday-balloon pink balloon-1"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+        <span
+          class="birthday-balloon blue balloon-2"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+        <span
+          class="birthday-balloon yellow balloon-3"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+        <span
+          class="birthday-balloon lilac balloon-4"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+        <span
+          class="birthday-balloon pink balloon-5"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+        <span
+          class="birthday-balloon blue balloon-6"
+          onclick="explotarGlobo(this, event)"
+        ></span>
+
+      </div>
+
     </section>
 
 
@@ -2496,11 +2532,17 @@
             <div class="photo-inner">
 
               <div class="photo-front">
+
                 <img src="foto3.jpeg" alt="">
+
               </div>
 
               <div class="photo-back">
-                <p>Una muestra de lo mucho que me aguantas</p>
+
+                <p>
+                  Una muestra de lo mucho que me aguantas
+                </p>
+
               </div>
 
             </div>
@@ -2516,11 +2558,17 @@
             <div class="photo-inner">
 
               <div class="photo-front">
+
                 <img src="foto4.jpeg" alt="">
+
               </div>
 
               <div class="photo-back">
-                <p>Por muchas más siestas juntitos ❤️</p>
+
+                <p>
+                  Por muchas más siestas juntitos ❤️
+                </p>
+
               </div>
 
             </div>
@@ -2537,11 +2585,17 @@
             <div class="photo-inner">
 
               <div class="photo-front">
+
                 <img src="foto5.jpeg" alt="">
+
               </div>
 
               <div class="photo-back">
-                <p>El día que te pedí (estaba pelado)</p>
+
+                <p>
+                  El día que te pedí (estaba pelado)
+                </p>
+
               </div>
 
             </div>
@@ -2554,11 +2608,17 @@
             <div class="photo-inner">
 
               <div class="photo-front">
+
                 <img src="foto6.jpeg" alt="">
+
               </div>
 
               <div class="photo-back">
-                <p>Quiero otro verano contigo</p>
+
+                <p>
+                  Quiero otro verano contigo
+                </p>
+
               </div>
 
             </div>
@@ -2615,7 +2675,9 @@
 
       <div class="origin-card">
 
-        <h2>El día que empezamos a hablar</h2>
+        <h2>
+          El día que empezamos a hablar
+        </h2>
 
         <div class="origin-date">
           30 de agosto de 2024
